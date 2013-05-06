@@ -1,0 +1,145 @@
+<product>
+	<data>
+		<product_id>gettingstarted</product_id>
+		<is_core>0</is_core>
+		<title>Getting Started</title>
+		<description>by YouNet Company</description>
+		<version>3.01</version>
+		<latest_version></latest_version>
+		<last_check>1321844109</last_check>
+		<is_active>1</is_active>
+		<url></url>
+		<url_version_check></url_version_check>
+	</data>
+	<installs>
+		<install>
+			<version>3.01_lolo</version>
+			<install_code><![CDATA[$this->database()->query("
+CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('gettingstarted') . "`(
+  `scheduledmail_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text CHARACTER SET utf8 NOT NULL,
+  `time` varchar(25) CHARACTER SET utf8 NOT NULL,
+  `scheduledmail_category_id` int(11) NOT NULL,
+  `active` int(11) NOT NULL,
+  `time_stamp` int(11) NOT NULL,
+  `message` text CHARACTER SET utf8 NOT NULL,
+  `message_parsed` text CHARACTER SET utf8 NOT NULL,
+   `unsubscribe_email` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`scheduledmail_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;");
+
+$this->database()->query("
+CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('gettingstarted_category') . "` (
+  `scheduledmail_id` int(11) NOT NULL AUTO_INCREMENT,
+  `scheduledmail_name` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `time_stamp` int(11) NOT NULL,
+  `description` text CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`scheduledmail_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;");
+
+$this->database()->query("INSERT INTO 
+`" . Phpfox::getT('gettingstarted_category') . "` (`scheduledmail_id`, `scheduledmail_name`, `time_stamp`, `description`) VALUES
+(1, 'register', 1312233531, 'gettingstarted.when_you_begin_to_create_a_account_it_will_send_to_you_a_private_message'),
+(2, 'logout', 1311971648, 'gettingstarted.this_message_will_be_sent_when_you_log_out_for_a_long_time'),
+(3, 'blog', 1311975840, 'gettingstarted.if_you_do_not_post_a_blog_for_a_long_time_it_will_notice_to_you'),
+(4, 'video', 1311971757, 'gettingstarted.if_you_do_not_post_a_video_for_a_long_time_it_will_notice_to_you'),
+(5, 'photo', 1311971778, 'gettingstarted.if_you_do_not_post_a_photo_for_a_long_time_it_will_notice_to_you'),
+(6, 'poll', 1311971800, 'gettingstarted.if_you_do_not_post_a_poll_for_a_long_time_it_will_notice_to_you'); ");
+
+$this->database()->query("
+CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('gettingstarted_issend') . "` (
+  `issend_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `scheduledmail_id` int(11) NOT NULL,
+  `time_stamp` int(11) NOT NULL,
+  `is_sent` int(11) NOT NULL,
+  PRIMARY KEY (`issend_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;");
+
+$this->database()->query("
+CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('gettingstarted_letter') . "` (
+  `scheduledmail_letter_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `subject` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `message` text CHARACTER SET utf8 NOT NULL,
+  `time_stamp` int(11) NOT NULL,
+  `scheduledmail_id` int(11) NOT NULL,
+  `email_status` int(11) NOT NULL DEFAULT '0' COMMENT '0:notsent;-1:pending;1:sending;2+:sendornumbersent',
+  PRIMARY KEY (`scheduledmail_letter_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;");
+
+$this->database()->query("
+CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('gettingstarted_settings') . "` (
+  `settings_id` int(11) NOT NULL AUTO_INCREMENT,
+  `module_id` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `user_group_id` int(11) NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `default_value` int(11) NOT NULL,
+  PRIMARY KEY (`settings_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;");
+
+$this->database()->query("
+CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('gettingstarted_article') . "` (
+  `article_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text CHARACTER SET utf8 NOT NULL,
+  `description` text CHARACTER SET utf8 NOT NULL,
+  `article_category_id` int(11) NOT NULL,
+  `time_stamp` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `description_parsed` text CHARACTER SET utf8 NOT NULL,
+  `total_score` decimal(4,2) NOT NULL DEFAULT '0.00',
+  `total_rating` int(10) NOT NULL,
+  `total_view` int(10) NOT NULL DEFAULT '0',
+  `total_like` int(10) NOT NULL DEFAULT '0',
+  `total_comment` int(10) NOT NULL DEFAULT '0',
+  `privacy` int(10) NOT NULL DEFAULT '0',
+  `privacy_comment` int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`article_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;");
+
+$this->database()->query("
+CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('gettingstarted_article_category') . "` (
+  `article_category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `article_category_name` text CHARACTER SET utf8 NOT NULL,
+  `time_stamp` int(11) NOT NULL,
+  PRIMARY KEY (`article_category_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;");
+
+$this->database()->query("
+CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('gettingstarted_position') . "` (
+  `position_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `time_stamp` int(11) NOT NULL,
+  `active` int(11) NOT NULL,
+  PRIMARY KEY (`position_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;");
+
+$this->database()->query("
+CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('gettingstarted_rating') . "` (
+  `rate_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `item_id` int(10) unsigned NOT NULL,
+  `user_id` int(10) unsigned NOT NULL,
+  `rating` decimal(4,2) NOT NULL DEFAULT '0.00',
+  `time_stamp` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`rate_id`),
+  KEY `item_id` (`item_id`,`user_id`),
+  KEY `item_id_2` (`item_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;");
+
+$this->database()->query("
+CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('gettingstarted_todolist') . "` (
+  `todolist_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `description_parsed` text COLLATE utf8_unicode_ci NOT NULL,
+  `time_stamp` int(11) NOT NULL,
+  PRIMARY KEY (`todolist_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;");]]></install_code>
+			<uninstall_code></uninstall_code>
+		</install>
+	</installs>
+	<modules>
+		<module_id>gettingstarted</module_id>
+	</modules>
+</product>

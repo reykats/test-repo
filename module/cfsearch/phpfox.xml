@@ -1,0 +1,59 @@
+<module>
+	<data>
+		<module_id>cfsearch</module_id>
+		<product_id>cfsearch</product_id>
+		<is_core>0</is_core>
+		<is_active>1</is_active>
+		<is_menu>1</is_menu>
+		<menu><![CDATA[a:1:{s:34:"cfsearch.admin_menu_manage_modules";a:1:{s:3:"url";a:1:{i:0;s:8:"cfsearch";}}}]]></menu>
+		<phrase_var_name>module_cfsearch</phrase_var_name>
+	</data>
+	<settings>
+		<setting group="" module_id="cfsearch" is_hidden="0" type="integer" var_name="search_result_limit" phrase_var_name="setting_search_result_limit" ordering="1" version_id="3.0.1">10</setting>
+	</settings>
+	<blocks>
+		<block type_id="0" m_connection="cfsearch" module_id="cfsearch" component="filter" location="1" is_active="1" ordering="1" disallow_access="" can_move="0">
+			<title></title>
+			<source_code />
+			<source_parsed />
+		</block>
+	</blocks>
+	<components>
+		<component module_id="cfsearch" component="index" m_connection="cfsearch" module="cfsearch" is_controller="1" is_block="0" is_active="1" />
+		<component module_id="cfsearch" component="filter" m_connection="" module="cfsearch" is_controller="0" is_block="1" is_active="1" />
+	</components>
+	<phrases>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="admin_menu_manage_modules" added="1331766681">Manage Modules</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="module_cfsearch" added="1331766681">Manage Modules</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="manage_supported_modules" added="1332075698">Manage Supported Modules</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="name" added="1332202955">Name</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="phrase_var_name" added="1332202980">Phrase Var Name</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="deactivate" added="1332203349">deactivate</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="active" added="1332203358">Active</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="activate" added="1332203378">activate</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="user" added="1332206656">User</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="blog" added="1332206663">Blog</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="music" added="1332206683">Music</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="pages" added="1332206690">Pages</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="no_search_results_found" added="1332372846">No search results found.</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="setting_search_result_limit" added="1332374592"><![CDATA[<title>Search Result Limit</title><info>Define the limit of how many results can be displayed when searching.
+<strong>Max Results : 30</strong>
+</info>]]></phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="search_results" added="1332376016">Search Results For</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="photo" added="1332392027">Photos</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="event" added="1332396410">Events</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="marketplace" added="1332396601">Marketplace</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="video" added="1332426330">Videos</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="poll" added="1332427470">Polls</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="forum" added="1332427850">Forum Threads</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="ultimate_search" added="1332432139">Ultimate Search</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="all_results" added="1332438825">All Results</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="search" added="1332439296">Search</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="search_results_2" added="1332439734">Search Results</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="please_enter_a_query_in_the_box_above" added="1332451384">Please enter a query in the box bellow.</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="1_mutual_friend" added="1332534031">1 mutual friend</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="total_mutual_friends" added="1332534107">{total} mutual friends</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="owner" added="1332535633">by</phrase>
+		<phrase module_id="cfsearch" version_id="3.0.1" var_name="view_more" added="1332538385">View more</phrase>
+	</phrases>
+</module>

@@ -1,0 +1,102 @@
+.cfsearch_filter_section
+{
+    padding:4px 0;
+    
+}
+.cfsearch_filter_section_title
+{
+    background-color: #EDEFF4;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 4px 2px 4px 5px;
+    text-transform: uppercase;
+}
+.cfsearch_filter_section_list_results
+{
+    padding:2px;
+}
+/*user*/
+.cfsearch_filter_section_list_results .img_profile
+{
+    float:left;
+    width:68px;
+}
+.cfsearch_filter_section_list_results .info_profile
+{                                    
+    float:left;
+    width:90%;
+    
+}
+.cfsearch_filter_section_list_results .img_profile img
+{
+     background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DFDFDF;
+    box-shadow: 3px 3px 3px #CCCCCC;
+    padding: 2px;
+    max-width:120px;
+}
+.cfsearch_filter_section_list_results .info_profile a
+{
+    font-size:13px;
+    font-weight:bold;
+
+}
+.cfsearch_filter_section_list_results .user_browse_add_friend a
+{
+    font-size:11px;
+    font-weight:normal;
+}
+.item_profile
+{
+    padding:5px 0;
+    border-bottom:1px solid #E9E9E9;
+    
+}
+.info_profile .p_4
+{
+     padding-left:0px;
+     padding-top:0px;
+}
+.cfsearch_filter_section_list_results .cfsearch_more_action
+{
+    font-size:11px;
+    font-weight:normal;
+}
+.cfsearch_filter_section_list_results  .cfsearch_more_action  a
+{
+     font-size:11px;
+    font-weight:normal;
+}
+.cfsearch_filter_section_list_results.video .img_profile,
+.cfsearch_filter_section_list_results.marketplace .img_profile,
+.cfsearch_filter_section_list_results.event .img_profile
+{
+    width:135px;
+}
+.cfsearch_filter_section_list_results.video .info_profile,
+.cfsearch_filter_section_list_results.marketplace .info_profile,
+.cfsearch_filter_section_list_results.event .info_profile
+{                                    
+    float:left;
+    width:80%;
+    
+}
+.cfsearch_filter_section_list_results .photo_profile
+{
+    float: left;
+    height: 210px;
+    margin-left: 6px;
+    width: 150px;
+}
+.cfsearch_filter_section_list_results .photo_profile img
+{
+    max-width:130px;
+    max-height:150px;
+}
+.main_search_bar
+{
+       margin: 10px 0 0;
+}
+
+

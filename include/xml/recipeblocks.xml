@@ -1,0 +1,17 @@
+<product>
+	<data>
+		<product_id>recipeblocks</product_id>
+		<is_core>0</is_core>
+		<title>Recipe Blocks</title>
+		<description>Recipe Blocks</description>
+		<version>1.0</version>
+		<latest_version></latest_version>
+		<last_check>1359134851</last_check>
+		<is_active>1</is_active>
+		<url></url>
+		<url_version_check></url_version_check>
+	</data>
+	<modules>
+		<module_id>recipeblocks</module_id>
+	</modules>
+</product>

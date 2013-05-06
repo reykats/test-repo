@@ -1,0 +1,30 @@
+<module>
+	<data>
+		<module_id>newhome</module_id>
+		<product_id>newhome</product_id>
+		<is_core>0</is_core>
+		<is_active>1</is_active>
+		<is_menu>1</is_menu>
+		<menu></menu>
+		<phrase_var_name>module_newhome</phrase_var_name>
+	</data>
+	<blocks>
+		<block type_id="0" m_connection="core.index-visitor" module_id="newhome" component="guestview" location="2" is_active="1" ordering="4" disallow_access="" can_move="1">
+			<title>Guest View</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="core.index-member" module_id="newhome" component="memberview" location="2" is_active="1" ordering="21" disallow_access="" can_move="1">
+			<title>Member View</title>
+			<source_code />
+			<source_parsed />
+		</block>
+	</blocks>
+	<components>
+		<component module_id="newhome" component="guestview" m_connection="" module="newhome" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="newhome" component="memberview" m_connection="" module="newhome" is_controller="0" is_block="1" is_active="1" />
+	</components>
+	<phrases>
+		<phrase module_id="newhome" version_id="3.3.0" var_name="module_newhome" added="1362401314">newhome</phrase>
+	</phrases>
+</module>

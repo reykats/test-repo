@@ -1,0 +1,204 @@
+<module>
+	<data>
+		<module_id>recipe</module_id>
+		<product_id>pg_recipe</product_id>
+		<is_core>0</is_core>
+		<is_active>1</is_active>
+		<is_menu>1</is_menu>
+		<menu><![CDATA[a:2:{s:30:"recipe.admin_menu_add_category";a:1:{s:3:"url";a:2:{i:0;s:6:"recipe";i:1;s:3:"add";}}s:35:"recipe.admin_menu_manage_categories";a:1:{s:3:"url";a:1:{i:0;s:6:"recipe";}}}]]></menu>
+		<phrase_var_name>module_recipe</phrase_var_name>
+	</data>
+	<menus>
+		<menu module_id="recipe" parent_var_name="" m_connection="explore" var_name="menu_recipe_recipes_972c97bdc47dfc8def0e74c55da0bbfd" ordering="121" url_value="recipe" version_id="2.0.5" disallow_access="" module="recipe" />
+		<menu module_id="recipe" parent_var_name="" m_connection="recipe.index" var_name="menu_recipe_add_a_recipe_5d00ad2f33769452cd7eb260698db4c8" ordering="122" url_value="recipe.add" version_id="2.0.5" disallow_access="" module="recipe" />
+		<menu module_id="recipe" parent_var_name="" m_connection="recipe.index" var_name="menu_recipe_my_recipes_5d00ad2f33769452cd7eb260698db4c8" ordering="123" url_value="profile.recipe" version_id="2.0.5" disallow_access="" module="recipe" />
+		<menu module_id="recipe" parent_var_name="" m_connection="profile" var_name="menu_recipe_recipes_624b3867952b470ce5124e11f5125d47" ordering="124" url_value="profile.recipe" version_id="2.0.5" disallow_access="" module="recipe" />
+	</menus>
+	<settings>
+		<setting group="" module_id="recipe" is_hidden="0" type="integer" var_name="recipe_max_image_pic_size" phrase_var_name="setting_recipe_max_image_pic_size" ordering="1" version_id="2.0.5">500</setting>
+		<setting group="" module_id="recipe" is_hidden="0" type="boolean" var_name="recipe_can_upload_picture" phrase_var_name="setting_recipe_can_upload_picture" ordering="1" version_id="2.0.5">1</setting>
+		<setting group="" module_id="recipe" is_hidden="0" type="string" var_name="recipe_meta_keywords" phrase_var_name="setting_recipe_meta_keywords" ordering="1" version_id="2.0.5">recipes</setting>
+		<setting group="" module_id="recipe" is_hidden="0" type="large_string" var_name="recipe_meta_description" phrase_var_name="setting_recipe_meta_description" ordering="1" version_id="2.0.5" />
+		<setting group="" module_id="recipe" is_hidden="0" type="boolean" var_name="recipe_using_demo_data" phrase_var_name="setting_recipe_using_demo_data" ordering="1" version_id="3.0.0beta1">0</setting>
+	</settings>
+	<blocks>
+		<block type_id="0" m_connection="recipe" module_id="recipe" component="filter" location="7" is_active="1" ordering="1" disallow_access="" can_move="0">
+			<title></title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="recipe.view" module_id="recipe" component="image" location="1" is_active="1" ordering="2" disallow_access="" can_move="0">
+			<title></title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="recipe.index" module_id="recipe" component="today" location="1" is_active="1" ordering="2" disallow_access="" can_move="0">
+			<title></title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="recipe.index" module_id="recipe" component="category" location="1" is_active="1" ordering="1" disallow_access="" can_move="0">
+			<title></title>
+			<source_code />
+			<source_parsed />
+		</block>
+	</blocks>
+	<plugins>
+		<plugin module_id="recipe" product_id="pg_recipe" call_name="init" title="phpFoxGuru Recipe Init Plugin"><![CDATA[Phpfox::getService('recipe')->init();]]></plugin>
+	</plugins>
+	<components>
+		<component module_id="recipe" component="index" m_connection="recipe.index" module="recipe" is_controller="1" is_block="0" is_active="1" />
+		<component module_id="recipe" component="category" m_connection="" module="recipe" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipe" component="filter" m_connection="" module="recipe" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipe" component="image" m_connection="" module="recipe" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipe" component="view" m_connection="recipe.view" module="recipe" is_controller="1" is_block="0" is_active="1" />
+		<component module_id="recipe" component="rate" m_connection="" module="recipe" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipe" component="today" m_connection="" module="recipe" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipe" component="new" m_connection="" module="recipe" is_controller="0" is_block="1" is_active="1" />
+	</components>
+	<crons>
+		<cron module_id="recipe" type_id="3" every="1"><![CDATA[Phpfox::getService('recipe')->setTodayRecipe();]]></cron>
+	</crons>
+	<stats>
+		<stat module_id="recipe" phrase_var="recipe.stat_title_7" stat_link="recipe" stat_image="recipe.png" is_active="1"><![CDATA[$this->database()
+->select('COUNT(*)')
+->from(Phpfox::getT('recipe'))
+->where('view_id = 0')
+->execute('getSlaveField');]]></stat>
+	</stats>
+	<phrases>
+		<phrase module_id="recipe" version_id="2.0.1" var_name="module_recipe" added="1261461781">recipe mod</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="admin_menu_add_category" added="1284208278">Add Category</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="admin_menu_manage_categories" added="1284208278">Manage Categories</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="category_order_successfully_updated" added="1284208501">Category order successfully updated.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="category_successfully_deleted" added="1284208525">Category successfully deleted.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="manage_categories" added="1284208551">Manage Categories</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="are_you_sure_this_will_delete_all_items_that_belong_to_this_category" added="1284208603">Are you sure? This will delete all items that belong to this category and cannot be undone.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="categories" added="1284208907">Categories</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="update_order" added="1284208936">Update Order</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="edit" added="1284208947">Edit</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="delete" added="1284208960">Delete</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="category_successfully_added" added="1284209083">Category successfully added.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="category_successfully_updated" added="1284209116">Category successfully updated.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="create_a_new_category" added="1284209232">Create a New Category</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="edit_a_category" added="1284209247">Edit a Category</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="category_details" added="1284209286">Category Details</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="category_name" added="1284209697">Category Name</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="parent_category" added="1284209719">Parent Category</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="select" added="1284209782">Select</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="submit" added="1284209793">Submit</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="provide_category_name" added="1284209887">Provide a category name.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="menu_recipe_recipes_972c97bdc47dfc8def0e74c55da0bbfd" added="1284210351">Recipes</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="user_setting_can_add_recipe" added="1284210940">Can add recipe?</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="provide_a_title" added="1284211017">Provide a title.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="provide_a_description" added="1284211032">Provide description.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="add_a_recipe" added="1284211061">Add a Recipe</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="recipe_title" added="1284211088">Recipes</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="are_you_sure" added="1284211115">Are you sure?</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="setting_recipe_max_image_pic_size" added="1284211363"><![CDATA[<title>Size of Uploaded Picture</title><info>When users upload an image, this will be the maximum size for that picture, anything bigger will be resized.</info>]]></phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="your_recipe_has_been_added" added="1284211408">Your recipe has been added.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="edit_a_recipe" added="1284211436">Edit a Recipe</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="your_recipe_has_been_updated" added="1284211571">Your recipe has been updated.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="the_recipe_does_not_exist" added="1284211621"><![CDATA[The recipe doesn't exist.]]></phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="setting_recipe_can_upload_picture" added="1284211766"><![CDATA[<title>Upload Picture</title><info>if set it to yes, user will be able to upload picture to the item.</info>]]></phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="title" added="1284211849">Title</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="category" added="1284211985">Category</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="description" added="1284212074">Description</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="short_description" added="1284212174">Short Description</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="keywords" added="1284212175">Keywords</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="image" added="1284212140">Picture</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="click_here_to_delete_this_image_and_upload_a_new_one_in_its_place" added="1284212263">Click here to delete this image and upload a new one in its place.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="you_can_upload_a_jpg_gif_or_png_file" added="1284212291">You can upload a JPG, GIF or PNG file.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="tags" added="1284212315">Tags</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="add" added="1284212371">Add</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="update" added="1284212383">Update</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="select_a_sub_category" added="1284212451">Select a Sub-Category</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="provide_a_category_this_item_will_belong_to" added="1284215500">Provide a category this item will belong to.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="select_a_image_to_upload" added="1284215527">Select a image to upload.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="not_a_valid_file_we_only_allow_sallow" added="1284215570">Not a valid file. We only allow: {sAllow}</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="date_added" added="1284216853">Date Added</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="an_error_occured_and_your_image_could_not_be_deleted" added="1284217338">An error occurred and your image could not be deleted. Please try again.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="user_setting_can_edit_own_recipe" added="1284217904">Can edit own recipe?</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="user_setting_can_edit_other_recipe" added="1284217936">Can edit other recipe?</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="invalid_permissions" added="1284218344">Invalid Permissions.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="popular" added="1284218653">Popular</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="most_discussed" added="1284218675">Most Discussed</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="most_viewed" added="1284218688">Most Viewed</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="recent" added="1284218700">Recent</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="featured" added="1284218712">Featured</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="recipes" added="1284218756">Recipes</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="setting_recipe_meta_keywords" added="1284218872"><![CDATA[<title>Recipe Meta Keywords</title><info>Meta keywords used within the recipe section.</info>]]></phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="setting_recipe_meta_description" added="1284218931"><![CDATA[<title>Recipe Meta Description</title><info>Meta description used within the recipe section.</info>]]></phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="no_recipe_have_been_added_yet" added="1284219287">No recipes have been added yet.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="be_the_first_to_add" added="1284219349">Be the first to add a recipe</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="by" added="1284219953">Posted By</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="nothing_special" added="1284220402">Nothing Special</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="poor" added="1284220417">Poor</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="worth" added="1284220453">Worth</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="pretty_cool" added="1284220467">Pretty Cool</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="awesome" added="1284220481">Awesome</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="full_name_s_recipe" added="1284220665"><![CDATA[{full_name}'s Recipes]]></phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="total_rating_ratings" added="1284220844">{total_rating} Ratings</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="you_cannot_rate_your_own_content" added="1284220885">You cannot rate your own content.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="user_setting_can_post_comment_on_recipe" added="1284221041">Can post comment on recipe?</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="search_tips" added="1284349371">Search over thousands recipes.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="sub_categories" added="1284350317">Sub Categories</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="user_setting_can_feature_recipes" added="1284358650">Can feature recipes?</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="feature" added="1284358672">Feature</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="menu_recipe_add_a_recipe_5d00ad2f33769452cd7eb260698db4c8" added="1284358731">Add a Recipe</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="unfeature" added="1284365088">Unfeature</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="user_setting_can_delete_own_recipe" added="1284365128">Can delete own recipe?</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="favorite" added="1284366442">Favorite</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="report" added="1284366456">Report</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="report_a_recipe" added="1284366468">Report a recipe</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="add_to_your_favorites" added="1284366486">Add to your Favorites</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="rating" added="1284367001">Rating</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="user_setting_can_delete_other_recipe" added="1284368261">Can delete other recipe?</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="you_have_already_voted" added="1284369707">You have already voted on this item.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="user_name_left_you_a_comment_on_site_title" added="1284372485">{user_name} left you a comment on {site_title}.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="user_name_left_you_a_comment_on_your_recipe_title" added="1284372526"><![CDATA[{user_name} left you a comment on your recipe.
+
+To view this comment, follow the link below:
+<a href="{link}">{link}</a>]]></phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="a_href_user_link_full_name_a_added_a_new_comment_on_their_own_a_href_title_link_recipe_a" added="1284381880"><![CDATA[<a href="{user_link}">{full_name}</a> added a new comment on their own <a href="{title_link}">recipe</a>.]]></phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="a_href_user_link_full_name_a_added_a_new_comment_on_your_a_href_title_link_recipe_a" added="1284381914"><![CDATA[<a href="{user_link}">{full_name}</a> added a new comment on your <a href="{title_link}">recipe</a>.]]></phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="a_href_user_link_full_name_a_added_a_new_comment_on_a_href_item_user_link_item_user_name_s_a_a_href" added="1284381949"><![CDATA[<a href="{user_link}">{full_name}</a> added a new comment on <a href="{item_user_link}">{item_user_name}'s</a> <a href="{title_link}">recipe</a>.]]></phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="full_name_wrote_a_comment_on_your_recipe_notification" added="1284382800"><![CDATA[{users} comment on your recipe "{title}".]]></phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="full_name_wrote_a_comment_on_your_recipe" added="1284382800"><![CDATA[<a href="{user_link}">{full_name}</a> wrote a comment on your recipe "<a href="{link}">{title}</a>".]]></phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="manage_recipes" added="1284460698">Manage Recipes</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="stat_title_7" added="1284461200">Total Recipes</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="user_setting_approve_recipes" added="1284465910">Approve recipes before they are publicly displayed?</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="user_setting_can_approve_recipes" added="1284465949">Can approve recipes?</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="recipe_of_the_day" added="1284466773">Recipe of The Day</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="user_setting_can_access_recipe" added="1284597425">Can access recipe?</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="menu_recipe_my_recipes_5d00ad2f33769452cd7eb260698db4c8" added="1284597825">My Recipes</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="pending" added="1284599396">Pending</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="menu_recipe_recipes_624b3867952b470ce5124e11f5125d47" added="1284599770">Recipes</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="approve" added="1284601182">Approve</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="is_pending_an_admins_approval" added="1284602161">This item is pending an admins approval.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="you_have_not_added_any_recipe" added="1284602286">You have not added any recipes.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="user_link_has_not_added_any_recipe" added="1284602322">{user_link} has not added any recipes.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="browse_other_recipe" added="1284602350">Browse Other Recipes</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="a_href_user_link_owner_full_name_a_added_a_new_recipe_a_href_title_link_title_a" added="1284603492"><![CDATA[<a href="{user_link}">{owner_full_name}</a> added a new recipe "<a href="{title_link}">{title}</a>".]]></phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="on" added="1284608637">On</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="your_membership_does_not_allow_you_to_delete_this_item" added="1284616770">Your membership does not allow you to delete this item.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="recipe_successfully_deleted" added="1284616876">Recipe deleted successfully.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="unable_to_find_the_recipe_you_plan_to_edit" added="1284711626">Unable to find the recipe you plan to edit.</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="recipe_add_a_recipe" added="1284718141">Add a Recipe</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="total_comments" added="1284719975">Comments</phrase>
+		<phrase module_id="recipe" version_id="2.0.5" var_name="total_views" added="1284720026">Views</phrase>
+		<phrase module_id="recipe" version_id="3.0.0beta1" var_name="setting_recipe_using_demo_data" added="1315372085"><![CDATA[<title>Is Using Demo Data?</title><info>Define if using demo data for categories.</info>]]></phrase>
+	</phrases>
+	<user_group_settings>
+		<setting is_admin_setting="0" module_id="recipe" type="boolean" admin="1" user="1" guest="0" staff="1" module="recipe" ordering="0">can_add_recipe</setting>
+		<setting is_admin_setting="0" module_id="recipe" type="boolean" admin="1" user="1" guest="0" staff="1" module="recipe" ordering="0">can_edit_own_recipe</setting>
+		<setting is_admin_setting="0" module_id="recipe" type="boolean" admin="1" user="0" guest="0" staff="1" module="recipe" ordering="0">can_edit_other_recipe</setting>
+		<setting is_admin_setting="0" module_id="recipe" type="boolean" admin="1" user="1" guest="0" staff="1" module="recipe" ordering="0">can_post_comment_on_recipe</setting>
+		<setting is_admin_setting="0" module_id="recipe" type="boolean" admin="1" user="0" guest="0" staff="1" module="recipe" ordering="0">can_feature_recipes</setting>
+		<setting is_admin_setting="0" module_id="recipe" type="boolean" admin="1" user="1" guest="0" staff="1" module="recipe" ordering="0">can_delete_own_recipe</setting>
+		<setting is_admin_setting="0" module_id="recipe" type="boolean" admin="1" user="0" guest="0" staff="1" module="recipe" ordering="0">can_delete_other_recipe</setting>
+		<setting is_admin_setting="0" module_id="recipe" type="boolean" admin="0" user="1" guest="1" staff="0" module="recipe" ordering="0">approve_recipes</setting>
+		<setting is_admin_setting="0" module_id="recipe" type="boolean" admin="1" user="0" guest="0" staff="1" module="recipe" ordering="0">can_approve_recipes</setting>
+		<setting is_admin_setting="0" module_id="recipe" type="boolean" admin="1" user="1" guest="0" staff="1" module="recipe" ordering="0">can_access_recipe</setting>
+	</user_group_settings>
+</module>

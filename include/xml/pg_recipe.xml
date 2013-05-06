@@ -1,0 +1,82 @@
+<product>
+	<data>
+		<product_id>pg_recipe</product_id>
+		<is_core>0</is_core>
+		<title>phpFoxGuru Recipe</title>
+		<description>recipe for phpfox</description>
+		<version>1.03</version>
+		<latest_version>1.02</latest_version>
+		<last_check>1324094666</last_check>
+		<is_active>1</is_active>
+		<url>http://www.phpfoxguru.com/v3/guru/product/p_pg_recipe</url>
+		<url_version_check>http://www.phpfoxguru.com/v3/guru/version/p_pg_recipe</url_version_check>
+	</data>
+	<installs>
+		<install>
+			<version>1.02</version>
+			<install_code><![CDATA[$this->database()->query("CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('recipe') . "` (
+				  `recipe_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+				  `view_id` tinyint(1) NOT NULL DEFAULT '0',
+				  `is_featured` tinyint(1) NOT NULL DEFAULT '0',
+				  `is_pickup` tinyint(1) unsigned NOT NULL DEFAULT '0',
+				  `user_id` int(10) unsigned NOT NULL,
+				  `title` varchar(255) NOT NULL,
+				  `title_url` varchar(255) NOT NULL,
+				  `time_stamp` int(10) unsigned NOT NULL,
+				  `image_path` varchar(50) DEFAULT NULL,
+				  `server_id` tinyint(1) NOT NULL DEFAULT '0',
+				  `total_comment` int(10) unsigned NOT NULL DEFAULT '0',
+				  `total_view` int(10) unsigned NOT NULL DEFAULT '0',
+				  `total_score` decimal(4,2) NOT NULL DEFAULT '0.00',
+				  `total_rating` int(10) unsigned NOT NULL DEFAULT '0',
+				  PRIMARY KEY (`recipe_id`),
+				  KEY `view_id` (`view_id`),
+				  KEY `view_id_3` (`view_id`,`user_id`),
+				  KEY `destination_id` (`recipe_id`,`view_id`),
+				  KEY `view_id_2` (`title_url`)
+			);");
+			$this->database()->query("CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('recipe_category') . "` (
+				  `category_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+				  `parent_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+				  `is_active` tinyint(1) NOT NULL DEFAULT '0',
+				  `name` varchar(255) NOT NULL,
+				  `name_url` varchar(255) NOT NULL,
+				  `time_stamp` int(10) unsigned NOT NULL DEFAULT '0',
+				  `used` int(10) unsigned NOT NULL DEFAULT '0',
+				  `ordering` int(11) unsigned NOT NULL DEFAULT '0',
+				  PRIMARY KEY (`category_id`),
+				  KEY `parent_id` (`parent_id`,`is_active`),
+				  KEY `is_active` (`is_active`,`name_url`)
+			);");
+			
+			$this->database()->query("CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('recipe_category_data') . "` (
+				  `recipe_id` int(10) unsigned NOT NULL,
+				  `category_id` int(10) unsigned NOT NULL,
+				  KEY `category_id` (`category_id`),
+				  KEY `recipe_id` (`recipe_id`)
+			);");
+			
+			$this->database()->query("CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('recipe_text') . "` (
+				  `recipe_id` int(10) unsigned NOT NULL,
+				  `description` mediumtext,
+				  `description_parsed` mediumtext,
+				  KEY `recipe_id` (`recipe_id`)
+			);");
+			
+			$this->database()->query("CREATE TABLE IF NOT EXISTS `" . Phpfox::getT('recipe_rating') . "` (
+				 `rate_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+				  `item_id` int(10) unsigned NOT NULL,
+				  `user_id` int(10) unsigned NOT NULL,
+				  `rating` decimal(4,2) NOT NULL DEFAULT '0.00',
+				  `time_stamp` int(10) unsigned NOT NULL,
+				  PRIMARY KEY (`rate_id`),
+				  KEY `item_id` (`item_id`,`user_id`),
+				  KEY `item_id_2` (`item_id`)
+			);");]]></install_code>
+			<uninstall_code></uninstall_code>
+		</install>
+	</installs>
+	<modules>
+		<module_id>recipe</module_id>
+	</modules>
+</product>

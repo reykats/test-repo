@@ -1,0 +1,213 @@
+<module>
+	<data>
+		<module_id>gettingstarted</module_id>
+		<product_id>gettingstarted</product_id>
+		<is_core>0</is_core>
+		<is_active>1</is_active>
+		<is_menu>1</is_menu>
+		<menu><![CDATA[a:7:{s:39:"gettingstarted.admin_menu_add_scheduled";a:1:{s:3:"url";a:2:{i:0;s:14:"gettingstarted";i:1;s:16:"addscheduledmail";}}s:41:"gettingstarted.admin_menu_manage_category";a:1:{s:3:"url";a:2:{i:0;s:14:"gettingstarted";i:1;s:10:"managemail";}}s:48:"gettingstarted.admin_menu_mange_article_category";a:1:{s:3:"url";a:2:{i:0;s:14:"gettingstarted";i:1;s:21:"managearticlecategory";}}s:37:"gettingstarted.admin_menu_add_article";a:1:{s:3:"url";a:2:{i:0;s:14:"gettingstarted";i:1;s:10:"addarticle";}}s:40:"gettingstarted.admin_menu_manage_article";a:1:{s:3:"url";a:2:{i:0;s:14:"gettingstarted";i:1;s:13:"managearticle";}}s:38:"gettingstarted.admin_menu_add_todolist";a:1:{s:3:"url";a:2:{i:0;s:14:"gettingstarted";i:1;s:11:"addtodolist";}}s:41:"gettingstarted.admin_menu_manage_todolist";a:1:{s:3:"url";a:2:{i:0;s:14:"gettingstarted";i:1;s:14:"managetodolist";}}}]]></menu>
+		<phrase_var_name>module_gettingstarted</phrase_var_name>
+	</data>
+	<menus>
+		<menu module_id="gettingstarted" parent_var_name="" m_connection="main" var_name="menu_gettingstarted_knowledge_base_fad58de7366495db4650cfefac2fcd61" ordering="127" url_value="gettingstarted" version_id="3.0.0beta3" disallow_access="" module="gettingstarted" />
+	</menus>
+	<settings>
+		<setting group="" module_id="gettingstarted" is_hidden="0" type="boolean" var_name="active_email_remainder" phrase_var_name="setting_active_email_remainder" ordering="1" version_id="2.1.0">1</setting>
+		<setting group="" module_id="gettingstarted" is_hidden="0" type="boolean" var_name="active_knowledge_base" phrase_var_name="setting_active_knowledge_base" ordering="1" version_id="2.1.0">1</setting>
+		<setting group="" module_id="gettingstarted" is_hidden="0" type="integer" var_name="letter_limit_will_be_sent_in_one_time" phrase_var_name="setting_letter_limit_will_be_sent_in_one_time" ordering="1" version_id="2.1.0">10</setting>
+		<setting group="" module_id="gettingstarted" is_hidden="0" type="integer" var_name="article_limit" phrase_var_name="setting_article_limit" ordering="1" version_id="2.1.0">10</setting>
+		<setting group="" module_id="gettingstarted" is_hidden="0" type="boolean" var_name="active_getting_started" phrase_var_name="setting_active_getting_started" ordering="1" version_id="2.1.0">1</setting>
+		<setting group="" module_id="gettingstarted" is_hidden="0" type="string" var_name="display_time_stamp" phrase_var_name="setting_display_time_stamp" ordering="1" version_id="3.0.0rc1">F j, Y</setting>
+	</settings>
+	<blocks>
+		<block type_id="0" m_connection="gettingstarted.article" module_id="gettingstarted" component="articledetail" location="1" is_active="0" ordering="1" disallow_access="" can_move="0">
+			<title>articledetail</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="gettingstarted.index" module_id="gettingstarted" component="latestarticles" location="1" is_active="1" ordering="2" disallow_access="" can_move="0">
+			<title>latestarticles</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="gettingstarted.index" module_id="gettingstarted" component="categories" location="1" is_active="1" ordering="1" disallow_access="" can_move="0">
+			<title>Categories</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="gettingstarted.index" module_id="gettingstarted" component="search" location="1" is_active="0" ordering="1" disallow_access="" can_move="0">
+			<title>search</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="gettingstarted.allarticle" module_id="gettingstarted" component="search" location="1" is_active="1" ordering="1" disallow_access="" can_move="0">
+			<title>allarticle</title>
+			<source_code />
+			<source_parsed />
+		</block>
+	</blocks>
+	<components>
+		<component module_id="gettingstarted" component="articledetail" m_connection="gettingstarted.article" module="gettingstarted" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="gettingstarted" component="latestarticles" m_connection="" module="gettingstarted" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="gettingstarted" component="search" m_connection="" module="gettingstarted" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="gettingstarted" component="index" m_connection="gettingstarted.index" module="gettingstarted" is_controller="1" is_block="0" is_active="1" />
+		<component module_id="gettingstarted" component="allarticle" m_connection="gettingstarted.allarticle" module="gettingstarted" is_controller="1" is_block="0" is_active="1" />
+		<component module_id="gettingstarted" component="category" m_connection="gettingstarted.category" module="gettingstarted" is_controller="1" is_block="0" is_active="1" />
+		<component module_id="gettingstarted" component="categories" m_connection="" module="gettingstarted" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="gettingstarted" component="article" m_connection="gettingstarted.article" module="gettingstarted" is_controller="1" is_block="0" is_active="1" />
+		<component module_id="gettingstarted" component="email-settings" m_connection="" module="gettingstarted" is_controller="0" is_block="1" is_active="1" />
+	</components>
+	<phrases>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="admin_menu_add_scheduled" added="1312215722">Add Email</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="admin_menu_manage_category" added="1312215722">Manage Emails</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="module_gettingstarted" added="1312215722">Getting Started</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="admin_menu_manage_mail" added="1311359332">Manage Emails</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="module_Gettingstarted" added="1311359332">Getting Started</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="manage_mails" added="1311892512">Manage Emails</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="name" added="1311892562">Name</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="module" added="1311892585">Module</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="time" added="1311892606">Reminder Time</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="message" added="1311892641">Message</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="active" added="1311892659">Active</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="edit" added="1311892680">Edit</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="edit_schedule_mail" added="1311893255">Edit Email</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="scheduled_name" added="1311893308">Scheduled Name</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="scheduled_category" added="1311893355">Module</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="create_schedule_mail" added="1311893484">Create schedule mail</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="scheduled_mail_successfully_deleted" added="1311893628">Email(s) successfully deleted.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="edit_scheduled_mail_successfully" added="1311893702">Email successfully edited.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="id_not_found" added="1311893743">id not found</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="add_scheduled_mail_false_because_time_that_you_add_it_has_existed_before" added="1311893801">Add email false because time that you add, it has existed before.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="add_scheduled_mail_successfully" added="1311893827">Email successfully added.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="time_has_to_be_larger_or_equal_0" added="1311893881">Time has to be larger or equal 0</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="time_has_to_be_numberic" added="1311893904">Time has to be numberic.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="time_is_not_allowed_empty" added="1311893945">Fill in a time for your email.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="message_is_not_allowed_empty" added="1311895006">Fill in a message for your email.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="subtitle" added="1312238035">Subject</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="admin_menu_mange_article_category" added="1312310577">Manage Article Categories</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="admin_menu_add_article" added="1312319339">Add Article</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="admin_menu_manage_article" added="1312322844">Manage Articles</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="admin_menu_add_todolist" added="1312580840">Add Todo List</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="admin_menu_manage_todolist" added="1312580840">Manage Todo Lists</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="active_mail_remainder" added="1314765761">Active Email Remainder:</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="active_base_knowledge" added="1314765788">Active Knowledge Base:</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="search_filters" added="1314765879">Search Filters</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="manage_mail_categories" added="1314765928">Manage Email Categories</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="add_knowledge_base_category" added="1314766045">Add a New Knowledge Base Category</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="add_knowledge_base_article" added="1314766244">Add a New Knowledge Base Article</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="knowledge_base_article" added="1314766320">Knowledge Base Articles</phrase>
+		<phrase module_id="gettingstarted" version_id="2.0.7" var_name="no_search_results_found" added="1314766389">No search results found.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="time_is_invalid" added="1315191675">Time is invalid.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="active_getting_started" added="1315192263">Active Getting Started:</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="no_articles" added="1315272972">No Articles.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="no_articles_in_this_category" added="1315273039">No articles in this categories.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="keyword" added="1315273233">Keywords:</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="no_knowledge_base_categories_have_been_created" added="1315273333">No Knowledge Base Categories have been created.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="description" added="1315273483">Description</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="title" added="1315273510">Title</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="knowledge_base_categories" added="1315273935">Knowledge Base Categories</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="number_of_articles_on_each_categories" added="1315274239">Number of Articles on each Categories:</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="number_of_articles" added="1315274279">Number of articles:</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="number_of_letters" added="1315274330">Number of Letters:</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="how_many_letter_will_be_sent_in_one_time" added="1315274404">How many emails will be sent in one time.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="when_you_begin_to_create_a_account_it_will_send_to_you_a_private_message" added="1315306996">When user creates an account, your site will send to that user a notice message.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="this_message_will_be_sent_when_you_log_out_for_a_long_time" added="1315307152">When user logs out for a long time and not log in again, your site will send a notice message to that user.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="if_you_do_not_post_a_blog_for_a_long_time_it_will_notice_to_you" added="1315307595">If user does not post a blog for a long time, your site will send a notice message to that user.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="if_you_do_not_post_a_video_for_a_long_time_it_will_notice_to_you" added="1315307627">If user does not post a video for a long time, your site will send a notice message to that user.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="if_you_do_not_post_a_poll_for_a_long_time_it_will_notice_to_you" added="1315307926">If user does not post a poll for a long time, your site will send a notice message to that user.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="add_a_new_schedule_mail" added="1315384239">Add a New Email</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="add_a_new_todo_list" added="1315385000">Add a New Todo List</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="caterories" added="1315385377">Categories:</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="no_articles_have_been_added_yet" added="1315386586">No articles have been added yet.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="define_the_limit_of_how_many_articles_can_be_displayed_on" added="1315455842">Define the limit of how many articles can be displayed on browse articles page</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="define_the_limit_of_how_many_articles_for_each_category" added="1315456136">Define the limit of how many articles for each category.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="define_the_limit_of_how_many_letters_will_be_sent_in_one_time" added="1315456350">Define the limit of how many emails will be sent in one time.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="setting_article_limit" added="1315457190"><![CDATA[<title>Articles Limit for each Category</title><info>Define the limit of how many articles for each category.</info>]]></phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="setting_active_getting_started" added="1315457536"><![CDATA[<title>Active Getting Started</title><info>Set to True in order to enable Getting Started</info>]]></phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="setting_active_email_remainder" added="1315457649"><![CDATA[<title>Active Email Remainder</title><info>Set to True in order to enable Email Remainder.</info>]]></phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="setting_active_knowledge_base" added="1315457732"><![CDATA[<title>Active Knowledge Base</title><info>Set to True in order to enable Knowledge Base</info>]]></phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="setting_letter_limit_will_be_sent_in_one_time" added="1315463206"><![CDATA[<title>Email Limit will be sent in one time</title><info>Define the limit of how many emails will be sent in one time.</info>]]></phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="setting_articles_limit_can_be_displayed" added="1315463908"><![CDATA[<title>Articles Limit can be displayed on browse Article Page</title><info>Define the limit of how many articles can be displayed on browse articles page.</info>]]></phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="if_you_do_not_post_a_photo_for_a_long_time_it_will_notice_to_you" added="1315479845">If user does not post a photo for a long time, your site will send a notice message to that user.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="no_articles_have_been_created" added="1315554767">No Articles have been created.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="subtitle_is_not_allowed_empty" added="1315557181">Fill in a subject for your email.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="no_mails_have_been_created" added="1315557867">No Emails have been created.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="no_todo_lists_have_been_created" added="1315560492">No Todo Lists have been created.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="uncategorized" added="1315568549">Uncategorized</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="no_knowledge_base_articles_have_been_created" added="1315618991">No Knowledge Base Articles have been created.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="gettingstarted_full_name_sent_you_a_message_subject_without_unsubscribe" added="1316163526"><![CDATA[{full_name} sent you a message.
+
+--------------------
+Subject: {subject}
+
+{message}
+--------------------
+
+To reply to this message, follow the link below:
+<a href="{link}">{link}</a>]]></phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="gettingstarted_gettingstarted_full_name_sent_you_a_message_subject_with_unsubscribe" added="1316163976"><![CDATA[{full_name} sent you a message.
+
+--------------------
+Subject: {subject}
+
+{message}
+--------------------
+
+To reply to this message, follow the link below:
+<a href="{link}">{link}</a>
+To unsubscribe this message, follow the link below:
+<a href="{unsublink}">Unsubscribe</a>]]></phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="todo_list" added="1316222527">Todo List</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="edit_todo_list" added="1316222947">Edit Todo List</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="todo_list_successfully_edited" added="1316223041">Todo List successfully edited</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="todo_list_successfully_added" added="1316223142">Todo List successfully added.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="todo_list_successfully_deleted" added="1316223235">Todo List(s) successfully deleted.</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="edit_knowledge_base_article" added="1316223477">Edit Knowledge Base Article</phrase>
+		<phrase module_id="gettingstarted" version_id="2.1.0" var_name="edit_knowledge_base_category" added="1316223560">Edit Knowledge Base Category</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta3" var_name="menu_gettingstarted_knowledge_base_fad58de7366495db4650cfefac2fcd61" added="1317606936">Knowledge Base</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta3" var_name="user_setting_can_post_comment_on_article" added="1317802093">Can post comment on article?</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta2" var_name="allow_users_to_unsubscribe_this_email" added="1318496785">Allow users to unsubscribe this email</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta2" var_name="todo_list_successfully_edite" added="1318497370">Todo List successfully edited</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta2" var_name="knowledge_base_category_is_not_allowed_empty" added="1318497473">Fill in a title for your article category.</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta2" var_name="fill_in_a_title_for_your_todo_list" added="1318497510">Fill in a title for your Todo List</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta2" var_name="fill_in_a_description_for_your_todo_list" added="1318497618">Fill in a description for your Todo list</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta2" var_name="fill_in_a_title_for_your_knowledgebase_article" added="1318497654">Fill in a title for your knowledge base article</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta2" var_name="fill_in_a_description_for_your_knowledgebase_article" added="1318497692">Fill in a description for your knowledge base article</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta5" var_name="category" added="1320227594">Category</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta5" var_name="search_articles_dot" added="1320229146">Search Articles...</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta5" var_name="add_email" added="1320230410">Add Email</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta5" var_name="manage_articles_categories" added="1320230621">Manage Articles Categories</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta5" var_name="add_articles" added="1320230757">Add Articles</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta5" var_name="no_articles_found" added="1320285260">No articles found.</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta5" var_name="manage_articles" added="1320291577">Manage Articles</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta5" var_name="add_todo_list" added="1320291709">Add Todo List</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0beta5" var_name="manage_todo_lists" added="1320291847">Manage Todo Lists</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="you_have_already_voted" added="1320921564">You cannot rate your own article.</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="you_cannot_rate_your_own_article" added="1320921733">You cannot rate your own article.</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="setting_display_time_stamp" added="1321841210"><![CDATA[<title>Getting Started</title><info>Controls time stamps for articles.
+
+If using the default setting and the default template the time stamp will appear under each article title and will look similar to:
+
+Posted June 22, 2008</info>]]></phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="previous" added="1321841310">Previous</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="next" added="1321841323">Next</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="done" added="1321841333">Done</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="do_not_show_it_again" added="1321841573"><![CDATA[Don't show it again]]></phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="show_more" added="1321841985">Show More</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="show_less" added="1321842023">Show Less</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="latest_articles" added="1321844676">Latest Articles</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="article_not_found" added="1321844848">The article you are looking for does not exist or has been removed.</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="poor" added="1321844934">Poor</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="nothing_special" added="1321844991">Nothing Special</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="worth_watching" added="1321845051">Worth Watching</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="pretty_cool" added="1321845112">Pretty Cool</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="awesome" added="1321845154">Awesome</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="knowledge_base" added="1321845297">Knowledge Base</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="added" added="1321845366">Added:</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="categories" added="1321845593">Categories</phrase>
+		<phrase module_id="gettingstarted" version_id="3.0.0rc1" var_name="posted_on_post_time" added="1321851011">Posted on {post_time}</phrase>
+	</phrases>
+	<user_group_settings>
+		<setting is_admin_setting="0" module_id="gettingstarted" type="boolean" admin="true" user="true" guest="true" staff="true" module="gettingstarted" ordering="0">can_post_comment_on_article</setting>
+	</user_group_settings>
+</module>

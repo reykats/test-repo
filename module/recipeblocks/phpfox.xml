@@ -1,0 +1,84 @@
+<module>
+	<data>
+		<module_id>recipeblocks</module_id>
+		<product_id>recipeblocks</product_id>
+		<is_core>0</is_core>
+		<is_active>1</is_active>
+		<is_menu>0</is_menu>
+		<menu />
+		<phrase_var_name>module_recipeblocks</phrase_var_name>
+	</data>
+	<blocks>
+		<block type_id="0" m_connection="profile.index" module_id="recipeblocks" component="myfavourites" location="3" is_active="1" ordering="4" disallow_access="" can_move="1">
+			<title>My Favorite Recipes</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="recipe.index" module_id="recipeblocks" component="mostcommentedrecipes" location="1" is_active="1" ordering="10" disallow_access="" can_move="1">
+			<title>Most Commented Recipes</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="recipe.index" module_id="recipeblocks" component="leastcommentedrecipes" location="1" is_active="1" ordering="11" disallow_access="" can_move="1">
+			<title>Least Commented Recipes</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="profile.index" module_id="recipeblocks" component="myrecipes" location="3" is_active="1" ordering="3" disallow_access="" can_move="1">
+			<title>My Recipes</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="recipe.index" module_id="recipeblocks" component="leastviewedrecipes" location="1" is_active="1" ordering="9" disallow_access="" can_move="1">
+			<title>Lowest Viewed Recipes</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="recipe.index" module_id="recipeblocks" component="mostviewedrecipes" location="1" is_active="1" ordering="8" disallow_access="" can_move="1">
+			<title>Most Viewed Recipes</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="recipe.index" module_id="recipeblocks" component="leastratedrecipes" location="1" is_active="1" ordering="7" disallow_access="" can_move="1">
+			<title>Lowest Rated Recipes</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="recipe.index" module_id="recipeblocks" component="highestratedrecipes" location="1" is_active="1" ordering="6" disallow_access="" can_move="1">
+			<title>Highest Rated Recipes</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="recipe.index" module_id="recipeblocks" component="newrecipes" location="1" is_active="1" ordering="3" disallow_access="" can_move="1">
+			<title>New Recipes</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="recipe.index" module_id="recipeblocks" component="featuredrecipes" location="1" is_active="1" ordering="4" disallow_access="" can_move="1">
+			<title>Featured Recipes</title>
+			<source_code />
+			<source_parsed />
+		</block>
+		<block type_id="0" m_connection="recipe.index" module_id="recipeblocks" component="randomrecipes" location="1" is_active="1" ordering="5" disallow_access="" can_move="1">
+			<title>Random Recipes</title>
+			<source_code />
+			<source_parsed />
+		</block>
+	</blocks>
+	<components>
+		<component module_id="recipeblocks" component="mostcommentedrecipes" m_connection="" module="recipeblocks" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipeblocks" component="leastviewedrecipes" m_connection="" module="recipeblocks" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipeblocks" component="mostviewedrecipes" m_connection="" module="recipeblocks" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipeblocks" component="leastratedrecipes" m_connection="" module="recipeblocks" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipeblocks" component="highestratedrecipes" m_connection="" module="recipeblocks" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipeblocks" component="randomrecipes" m_connection="" module="recipeblocks" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipeblocks" component="featuredrecipes" m_connection="" module="recipeblocks" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipeblocks" component="newrecipes" m_connection="" module="recipeblocks" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipeblocks" component="leastcommentedrecipes" m_connection="" module="recipeblocks" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipeblocks" component="myrecipes" m_connection="" module="recipeblocks" is_controller="0" is_block="1" is_active="1" />
+		<component module_id="recipeblocks" component="myfavourites" m_connection="" module="recipeblocks" is_controller="0" is_block="1" is_active="1" />
+	</components>
+	<phrases>
+		<phrase module_id="recipeblocks" version_id="3.4.1" var_name="module_recipeblocks" added="1359129353">Recipe Blocks</phrase>
+	</phrases>
+</module>

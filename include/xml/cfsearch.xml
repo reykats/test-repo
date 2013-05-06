@@ -1,0 +1,50 @@
+<product>
+	<data>
+		<product_id>cfsearch</product_id>
+		<is_core>0</is_core>
+		<title>Ultimate search for phpFox</title>
+		<description>Ultimate search for phpFox</description>
+		<version>3.0.2</version>
+		<latest_version></latest_version>
+		<last_check>1334484077</last_check>
+		<is_active>1</is_active>
+		<url></url>
+		<url_version_check></url_version_check>
+	</data>
+	<installs>
+		<install>
+			<version>3.0.1</version>
+			<install_code><![CDATA[$this->database()->query("CREATE TABLE IF NOT EXISTS `".phpfox::getT('cfsearch_modules')."` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `module` varchar(50) NOT NULL,
+  `phrase_var_name` varchar(255) NOT NULL,
+  `is_active` tinyint(4) NOT NULL DEFAULT '1',
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `params` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  AUTO_INCREMENT=11 ;");
+
+$this->database()->query("INSERT INTO  `".phpfox::getT('cfsearch_modules')."` (`id`, `module`, `phrase_var_name`, `is_active`, `ordering`, `params`) VALUES
+(1, 'blog', 'cfsearch.blog', 1, 4, ''),
+(2, 'user', 'cfsearch.user', 1, 1, ''),
+(3, 'music', 'cfsearch.music', 1, 5, ''),
+(4, 'pages', 'cfsearch.pages', 1, 2, ''),
+(5, 'photo', 'cfsearch.photo', 1, 7, ''),
+(6, 'event', 'cfsearch.event', 1, 3, ''),
+(7, 'marketplace', 'cfsearch.marketplace', 1, 8, ''),
+(8, 'video', 'cfsearch.video', 1, 6, ''),
+(9, 'poll', 'cfsearch.poll', 1, 9, ''),
+(10, 'forum', 'cfsearch.forum', 1, 10, '');");]]></install_code>
+			<uninstall_code></uninstall_code>
+		</install>
+		<install>
+			<version>3.0.2</version>
+			<install_code><![CDATA[$this->database()->query("INSERT IGNORE INTO `".phpfox::getT("ceofox_plugins")."` (`plugin_title`, `module_name`, `ph`, `status`, `version`) VALUES
+('Ultimate search for phpFox', 'cfsearch', 'c51ce410c124a10e0db5e4b97fc2af39', 0, '3.0.2');");]]></install_code>
+			<uninstall_code></uninstall_code>
+		</install>
+	</installs>
+	<modules>
+		<module_id>cfsearch</module_id>
+	</modules>
+</product>

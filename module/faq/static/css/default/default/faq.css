@@ -1,0 +1,101 @@
+dl#faq_main_content{
+clear:both;
+}
+div#faq_btm_space{
+height:500px!important;
+}
+#faq_permalink_page{
+  padding:20px
+}
+
+#faq_permalink_page dt{
+  font-size:14px; font-weight:bold; margin-bottom:5px
+}
+
+div.permalink{
+margin:5px 0;text-align:right
+}
+
+ul.faq_submenu{
+	background:#f1f1f1;
+	padding:15px 10px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius:6px;
+    border-radius: 6px;
+}
+
+    ul.faq_submenu li{
+      list-style: decimal;
+      margin-left:30px;
+      font-size:12px
+    }
+
+    ul.faq_submenu li a{
+      font-size:12px
+    }
+#js_block_border_faq_panel ul.action > li a{
+background-repeat: no-repeat;
+    color: #333333;
+    display: block;
+    line-height: 22px;
+    text-decoration: none
+}
+#js_block_border_faq_panel ul.action > li a img{
+vertical-align: middle;
+}
+
+h3{ padding-top:40px} /* normal header 20px fixed header 40px */
+span.go-to-top{float:right;font-size:16px;display:block;line-height:18px}
+span.go-to-top a{text-decoration: none}
+
+/*#faq_wrapper h3 span{display:none}*/
+
+dl.faq{
+	margin-bottom:30px;
+}
+
+	dl.faq dt{
+		font-weight:bold;
+		color:#000000;
+		padding:5px 0 5px 0;
+		display:block;
+        font-size:12px;
+        padding-top:45px;/* normal header 23px fixed header 45px */
+        margin-bottom:10px;
+        background-color:#fff;
+        border-bottom:1px solid #cccccc
+	}
+
+  	dl.faq dd{
+      display:block;
+      padding:8px 10px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -khtml-border-radius:3px;
+      border-radius: 3px;
+      background:#f1f1f1;
+  	}
+
+#js_block_border_faq_panel.fixed {
+  position: fixed;
+  top: 0;
+  width:150px;
+  padding-top:40px; /* normal header 20px fixed header 36px */
+}
+
+.faq_subaction{
+  display:none
+}
+
+#faq_intro_text{
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/*#faq_intro_table tr td{
+  width:100px;
+  font-size: 12px;
+  padding:2px;
+  text-align: center;
+}*/
