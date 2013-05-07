@@ -32,6 +32,11 @@
 			<source_code />
 			<source_parsed />
 		</block>
+		<block type_id="0" m_connection="recipe.view" module_id="recipe" component="category" location="1" is_active="1" ordering="1" disallow_access="" can_move="0">
+			<title></title>
+			<source_code />
+			<source_parsed />
+		</block>
 		<block type_id="0" m_connection="recipe.index" module_id="recipe" component="today" location="1" is_active="1" ordering="2" disallow_access="" can_move="0">
 			<title></title>
 			<source_code />

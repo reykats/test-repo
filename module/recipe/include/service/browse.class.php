@@ -105,13 +105,13 @@ class Recipe_Service_Browse extends Phpfox_Service
 		{
 			$this->database()->innerJoin(Phpfox::getT('tag'), 'tag', 'tag.item_id = m.recipe_id AND tag.category_id = \'recipe\' AND tag.tag_url = \'' . $this->database()->escape($this->_sTag) . '\'')->group('m.recipe_id');
 		}		
-
+		
 		$this->_iCnt = $this->database()->select((($this->_sCategory !== null || $this->_sTag !== null) ? 'COUNT(DISTINCT m.recipe_id)' : 'COUNT(*)'))
 			->from($this->_sTable, 'm')
 			->join(Phpfox::getT('recipe_text'), 'rt', 'rt.recipe_id=m.recipe_id')
 			->where($this->_aConditions)
 			->execute('getSlaveField');
-		
+			
 		if ($this->_iCnt)
 		{
 			if ($this->_sCategory !== null)
@@ -121,7 +121,7 @@ class Recipe_Service_Browse extends Phpfox_Service
 			
 			if ($this->_sTag != null)
 			{
-				$this->database()->innerJoin(Phpfox::getT('tag'), 'tag', 'tag.item_id = m.recipe_id AND tag.category_id = \'recipe\'')->group('m.recipe_id');
+				$this->database()->innerJoin(Phpfox::getT('tag'), 'tag', 'tag.item_id = m.recipe_id AND tag.category_id = \'recipe\' AND tag.tag_url = \'' . $this->database()->escape($this->_sTag) . '\'')->group('m.recipe_id');
 			}
 			
 			$this->_aRows = $this->database()->select('m.*, ' . Phpfox::getUserField())

@@ -118,6 +118,38 @@ class Recipe_Component_Controller_View extends Phpfox_Component
 			)
 		);		
 		
+		/* $aFilterMenuCache = array();
+		$aFilterMenu = array(
+			Phpfox::getPhrase('recipe.recent') => '',
+			Phpfox::getPhrase('recipe.featured') => 'featured',
+			Phpfox::getPhrase('recipe.most_viewed') => 'most-viewed',
+			Phpfox::getPhrase('recipe.popular') => 'popular',
+			Phpfox::getPhrase('recipe.most_discussed') => 'most-discussed'
+		);
+		
+		if (Phpfox::getUserParam('recipe.can_approve_recipes'))
+		{
+			$aFilterMenu[Phpfox::getPhrase('recipe.pending')] = 'pending';
+		}
+		
+		$iFilterCount = 0;
+		foreach ($aFilterMenu as $sMenuName => $sMenuLink)
+		{
+			$iFilterCount++;
+			$aFilterMenuCache[] = array(
+				'name' => $sMenuName,
+				'link' => $this->url()->makeUrl('recipe' . (empty($sCategoryUrl) ? '' : '.category' . $sCategoryUrl), array('view' => $sMenuLink)),
+				'active' => ($sView == $sMenuLink ? true : false),
+				'last' => (count($aFilterMenu) === $iFilterCount ? true : false)
+			);	
+		}
+		 */
+		/* $this->template()->assign(array(
+					'aFilterRecipeTabs' => $aFilterMenuCache
+				)
+				); */
+		
+		
 		$this->template()->setTitle($aRecipe['title'])
 			->setTitle(Phpfox::getPhrase('recipe.recipes'))
 			->setBreadcrumb(Phpfox::getPhrase('recipe.recipes'), $this->url()->makeUrl('recipe'))

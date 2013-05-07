@@ -17,6 +17,9 @@ class Recipe_Component_Controller_Index extends Phpfox_Component
 {
 	public function process()
 	{		
+		
+		print_r($this->request()->get('req4'));
+		
 		Phpfox::getUserParam('recipe.can_access_recipe', true);
 		if (($iDeleteId = $this->request()->getInt('delete')))
 		{
@@ -128,7 +131,7 @@ class Recipe_Component_Controller_Index extends Phpfox_Component
 		
 		
 		$sTagSearchValue = null;
-		
+
 		if ($this->request()->get('req2') == 'tag' && $this->request()->get('req3'))
 		{
 			$sCategory = null;

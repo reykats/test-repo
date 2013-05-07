@@ -91,6 +91,8 @@ class Recipe_Service_Process extends Phpfox_Service
 				'ready_in' => Phpfox::getLib('parse.input')->prepare($aVals['ready_in'])
 			)
 		);
+		//insert tags here
+		$this->insertTags($iRecipeId, $aVals['keywords']);
 		
 		if(isset($_FILES['image']['name']) and !empty($_FILES['image']['name'])){
 			if(Phpfox::getParam('recipe.recipe_can_upload_picture'))
@@ -233,7 +235,9 @@ class Recipe_Service_Process extends Phpfox_Service
 						'ready_in' => Phpfox::getLib('parse.input')->prepare($aVals['ready_in'])
 					), 'recipe_id = ' . (int) $iRecipeId);
 			
-			$this->database()->delete(Phpfox::getT('recipe_category_data'), 'recipe_id = ' . (int) $iRecipeId);			
+			$this->database()->delete(Phpfox::getT('recipe_category_data'), 'recipe_id = ' . (int) $iRecipeId);
+			//insert tags here
+			$this->insertTags($iRecipeId, $aVals['keywords']);
 			
 			foreach ($this->_aCategories as $iCategoryId)
 			{
@@ -243,6 +247,27 @@ class Recipe_Service_Process extends Phpfox_Service
 			return true;	
 		}
 		return Phpfox_Error::set(Phpfox::getPhrase('recipe.invalid_permissions'));
+	}
+	
+	public function insertTags($iRecipeId, $_keywords) {	
+		//delete tags before inserting new ones
+		$this->database()->delete(Phpfox::getT('tag'), 'item_id = ' . $iRecipeId);
+		//insert tag here added by reykats
+		if($_keywords) {			
+			$keywords = explode(",", $_keywords);
+			foreach($keywords as $keyword):
+				$tag_text = trim($keyword);
+				$this->database()->insert(Phpfox::getT('tag'), array(
+						'item_id' => $iRecipeId,
+						'category_id' => 'recipe',
+						'user_id' => Phpfox::getUserId(),
+						'tag_text' => Phpfox::getLib('parse.input')->clean($tag_text, 255),
+						'tag_url' => Phpfox::getLib('parse.input')->cleanTitle($tag_text),
+						'added' => PHPFOX_TIME
+					)
+				);
+			endforeach;
+		}
 	}
 	
 	public function delete($iRecipeId = null, &$aRecipe = null)
