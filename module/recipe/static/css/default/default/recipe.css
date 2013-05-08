@@ -177,3 +177,14 @@ ul.item_menu_bar li a:hover
 #right .block.show { display:block !important; }
 #right .block.hide { display:none !important; }
 .block_listing_inline ul li { margin-bottom:10px; }
+.recipe-preparations {}
+.recipe-preparations span { color:#3B5998; }
+.recipe-contents { 
+	border-top: 1px dashed #CCCCCC;
+    margin: 20px 0 0;
+    padding: 20px 0 0;
+    position: relative;
+}
+.recipe-contents .recipe-desc { float:left; width:70%; }
+.recipe-contents .recipe-desc .recipe-image { margin:0 10px 0 0; float:left; }
+.recipe-contents .recipe-info { float:left; width:30%; }

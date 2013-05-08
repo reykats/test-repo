@@ -37,7 +37,15 @@ class Recipe_Component_Controller_View extends Phpfox_Component
 		Phpfox::getLib('database')->query("UPDATE " . Phpfox::getT('recipe') . " SET total_view = total_view + 1 WHERE recipe_id = " . (int) $aRecipe['recipe_id'] . "");
 		$aRecipe['total_view'] = $aRecipe['total_view'] + 1;
 		
-		
+		$Image = Phpfox::getLib('image.helper')->display(array(
+			'title' => Phpfox::getUserBy('full_name'),
+			'path' => 'core.url_user',
+			'file' => Phpfox::getUserBy('user_image'),
+			'suffix' => '_120',
+			'max_width' => 120,
+			'max_height' => 120
+			)
+		); 
 		
 		
 		$this->setParam('aRecipe', $aRecipe);
@@ -116,39 +124,7 @@ class Recipe_Component_Controller_View extends Phpfox_Component
 				'feed_title' => $aRecipe['title'],
 				'total_like' => 0,
 			)
-		);		
-		
-		/* $aFilterMenuCache = array();
-		$aFilterMenu = array(
-			Phpfox::getPhrase('recipe.recent') => '',
-			Phpfox::getPhrase('recipe.featured') => 'featured',
-			Phpfox::getPhrase('recipe.most_viewed') => 'most-viewed',
-			Phpfox::getPhrase('recipe.popular') => 'popular',
-			Phpfox::getPhrase('recipe.most_discussed') => 'most-discussed'
-		);
-		
-		if (Phpfox::getUserParam('recipe.can_approve_recipes'))
-		{
-			$aFilterMenu[Phpfox::getPhrase('recipe.pending')] = 'pending';
-		}
-		
-		$iFilterCount = 0;
-		foreach ($aFilterMenu as $sMenuName => $sMenuLink)
-		{
-			$iFilterCount++;
-			$aFilterMenuCache[] = array(
-				'name' => $sMenuName,
-				'link' => $this->url()->makeUrl('recipe' . (empty($sCategoryUrl) ? '' : '.category' . $sCategoryUrl), array('view' => $sMenuLink)),
-				'active' => ($sView == $sMenuLink ? true : false),
-				'last' => (count($aFilterMenu) === $iFilterCount ? true : false)
-			);	
-		}
-		 */
-		/* $this->template()->assign(array(
-					'aFilterRecipeTabs' => $aFilterMenuCache
-				)
-				); */
-		
+		);				
 		
 		$this->template()->setTitle($aRecipe['title'])
 			->setTitle(Phpfox::getPhrase('recipe.recipes'))
@@ -183,10 +159,12 @@ class Recipe_Component_Controller_View extends Phpfox_Component
 			->assign(array(
 					'aRecipe' => $aRecipe,
 					'sParentLink' => 'recipe',
+					'sSuffix' => '_' . Phpfox::getParam('recipe.recipe_max_image_pic_size'),
+					'profileImage' => $Image,
 					'sSuffix' => '_' . Phpfox::getParam('recipe.recipe_max_image_pic_size')
 				)
 			);
-			
+				
 		if (Phpfox::isModule('rate'))
 		{
 				$this->template()->setHeader(array(
