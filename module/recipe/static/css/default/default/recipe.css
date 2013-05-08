@@ -174,6 +174,7 @@ ul.item_menu_bar li a:hover
 	display:none;
 }
 #right #js_block_border_recipeblocks_randomrecipes .title{ display:none; }
+#right .block_listing_inline li a { font-size:13px; }
 #right .block.show { display:block !important; }
 #right .block.hide { display:none !important; }
 .block_listing_inline ul li { margin-bottom:10px; }
