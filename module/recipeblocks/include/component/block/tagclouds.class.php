@@ -7,12 +7,12 @@ defined('PHPFOX') or exit('NO DICE!');
 
 class Recipeblocks_Component_Block_Tagclouds extends Phpfox_Component
 {
+	private $_tagText = array();
 	/**
 	 * Class process method wnich is used to execute this component.
 	 */
 	public function process()
 	{
-	
 	    $aTags = $this->getKeywords();
 		if(!$aTags) {
 			$tag_clouds = '';
@@ -40,27 +40,27 @@ class Recipeblocks_Component_Block_Tagclouds extends Phpfox_Component
 			$font_size = $starting_font_size + $x.'px';
 			$url = $this->url()->makeUrl('recipe/tag');
 			$html .= "<span style='font-size: ".$font_size."; color: #676F9D;'>
-							<a href='". $url . Phpfox::getLib('parse.input')->cleanTitle($tag) ."'>".$tag."</a>
+							<a href='". $url . Phpfox::getLib('parse.input')->cleanTitle($tag) ."'>".$this->_tagText[$tag]."</a>
 						</span>".$tag_separator;
 		}
 		return $html;
 	}
 
     public function getKeywords() {
-        return Phpfox::getLib('database') ->select('u.keywords')
-              ->from('phpfox_recipe_text u')
-			  ->where('keywords <> ""')
-			  ->execute('getSlaveRows');
+		//$this->database()->innerJoin(Phpfox::getT('recipe_category_data'), 'mcd', 'mcd.recipe_id = m.recipe_id');
+        return Phpfox::getLib('database')->select('t.tag_text, t.tag_url')
+				->from(Phpfox::getT('tag'), 't')
+				->join(Phpfox::getT('recipe'), 'r', 'r.recipe_id=t.item_id')
+				->where('t.category_id = "recipe"')
+				->execute('getSlaveRows');
     }
 	
 	public function prepareKeywords($aTags) {
 		$arrTags = array();
 		foreach($aTags as $tag):
-			$tags = explode(",", $tag['keywords']);
-			foreach($tags as $xtag):
-				$ntag = trim($xtag);
-				$arrTags[$ntag]  = $arrTags[$ntag] + 1;
-			endforeach;
+			$ntag = $tag['tag_url'];
+			$arrTags[$ntag]  = $arrTags[$ntag] + 1;
+			$this->_tagText[$ntag] = $tag['tag_text'];
 		endforeach;
 		$tag_clouds = $this->randomizeTagClouds($arrTags);
 		return $tag_clouds;
