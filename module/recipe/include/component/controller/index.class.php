@@ -256,7 +256,7 @@ class Recipe_Component_Controller_Index extends Phpfox_Component
 		if (!empty($sTagSearchValue))
 		{
 			$this->template()->setBreadcrumb(Phpfox::getPhrase('recipe.tags'), $this->url()->makeUrl('recipe'));
-			$this->template()->setBreadcrumb($sTagSearchValue, null, true);
+			$this->template()->setBreadcrumb($oServiceRecipeBrowse->tagText(), null, true);
 		}
 	}
 	

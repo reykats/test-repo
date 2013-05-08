@@ -32,6 +32,8 @@ class Recipe_Service_Browse extends Phpfox_Service
 	private $_aCallback = false;
 	
 	private $_sTag = null;
+	
+	private $_sTagText = null;
 
 	public function __construct()
 	{	
@@ -85,9 +87,23 @@ class Recipe_Service_Browse extends Phpfox_Service
 	
 	public function tag($sTag)
 	{
+		$this->_getTagText($sTag);
 		$this->_sTag = $sTag;
 		
 		return $this;
+	}
+	
+	public function _getTagText($tag) {
+		//added script by Rey for Tag Search Value
+		$aTagText = Phpfox::getLib('database')->select('tag_text')
+			->from(Phpfox::getT('tag'))
+			->where('tag_url = \'' .  trim($tag) . '\'')
+			->execute('getRow');
+		$this->_sTagText = $aTagText['tag_text'];
+	}
+	
+	public function tagText() {
+		return $this->_sTagText;
 	}
 	
 	public function execute()
