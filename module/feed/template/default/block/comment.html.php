@@ -20,7 +20,7 @@
 			</div>
 			{/if}
 
-<div class="comment_mini_content_holder"{if isset($sFeedType) &&  $sFeedType == 'view' && $aFeed.can_post_comment}{else}{if isset($aFeed.likes) || (isset($aFeed.total_comment) && $aFeed.total_comment > 0)}{else}{if ((isset($aFeed.comments) && !count($aFeed.comments)) || !isset($aFeed.comments))} style="display:none;"{/if}{/if}{/if}>	
+<div class="comment_mini_content_holder"{if isset($sFeedType) &&  $sFeedType == 'view' && $aFeed.can_post_comment}{else}{if isset($aFeed.likes) || (isset($aFeed.total_comment) && $aFeed.total_comment > 0)}{else}{if ((isset($aFeed.comments) && !count($aFeed.comments)) || !isset($aFeed.comments))} style="display:block;"{/if}{/if}{/if}>	
 	<div class="comment_mini_content_holder_icon"></div>
 	<div class="comment_mini_content_border">						
 		<div class="js_comment_like_holder" id="js_feed_like_holder_{$aFeed.feed_id}">
@@ -107,7 +107,7 @@
 					<div class="{if isset($sFeedType) &&  $sFeedType == 'view'}comment_mini_content {/if}comment_mini_textarea_holder">
 						<div><input type="hidden" name="val[default_feed_value]" value="{phrase var='feed.write_a_comment'}" /></div>						
 						<div class="js_comment_feed_value">{phrase var='feed.write_a_comment'}</div>
-						<textarea cols="60" rows="4" name="val[text]" class="js_comment_feed_textarea" id="js_feed_comment_form_textarea_{$aFeed.feed_id}">{if isset($sFeedType) &&  $sFeedType == 'view' && Phpfox::getUserParam('comment.wysiwyg_on_comments') && Phpfox::getParam('core.wysiwyg') == 'tiny_mce'}{else}{phrase var='feed.write_a_comment'}{/if}</textarea>
+						<textarea cols="60" rows="10" name="val[text]" class="js_comment_feed_textarea" id="js_feed_comment_form_textarea_{$aFeed.feed_id}">{if isset($sFeedType) &&  $sFeedType == 'view' && Phpfox::getUserParam('comment.wysiwyg_on_comments') && Phpfox::getParam('core.wysiwyg') == 'tiny_mce'}{else}{phrase var='feed.write_a_comment'}{/if}</textarea>
 						<div class="js_feed_comment_process_form">{phrase var='feed.adding_your_comment'}{img theme='ajax/add.gif'}</div>
 					</div>
 					<div class="feed_comment_buttons_wrap" style="display:block;">
