@@ -11,7 +11,7 @@ defined('PHPFOX') or exit('NO DICE!');
 
 {img thickbox=true path='recipe.url_image' file=$aRacipe.image_path suffix='_120' max_width='25' max_height='25' class='js_mp_fix_width' title=$aRacipe.title}
 
-        <a href="/network/recipe/view/{$aRacipe.title_url}">{$aRacipe.title}</a>
+        <a href="/recipe/view/{$aRacipe.title_url}">{$aRacipe.title}</a>
         </li><div class="clear"></div>
 
 {/foreach}
