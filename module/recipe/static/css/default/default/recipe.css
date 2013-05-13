@@ -119,12 +119,32 @@ ul.item_menu_bar li a:hover
 }
 /* Recipe Tabs CSS */
 .recipe-tab {  
-	border-bottom:1px #aaa solid;
+	border:1px #aaa solid;
 	height:35px;
+	padding-top:35px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 }
 .recipe-tab ul {  
 	list-style:none outside none;
+	margin-left:5px;
 	
+}
+.recipe_share_box { border:none !important; }
+ul.item_menu { top:1px !important; }
+#recipe_content {
+	border: 1px solid #AAAAAA;
+    padding: 7px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 }
 .recipe-tab ul li {  
 	background: none repeat scroll 0 0 #CCCCCC;
@@ -132,7 +152,7 @@ ul.item_menu_bar li a:hover
 	border-right:1px #aaa solid;
 	border-top:1px #aaa solid;
     float: left;
-    margin-right: 10px;
+    margin-right: 8px;
     padding: 10px 0;
     text-align: center;
     width: 70px;
