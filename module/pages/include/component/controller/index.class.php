@@ -72,7 +72,7 @@ class Pages_Component_Controller_Index extends Phpfox_Component
 						'action' => ($bIsProfile === true ? $this->url()->makeUrl($aUser['user_name'], array('pages', 'view' => $this->request()->get('view'))) : $this->url()->makeUrl('pages', array('view' => $this->request()->get('view')))),
 						'default_value' => Phpfox::getPhrase('pages.search_pages'),
 						'name' => 'search',
-						'field' => 'pages.title'
+						'field' => array('pages.title')
 					),
 					'sort' => array(
 						'latest' => array('pages.time_stamp', Phpfox::getPhrase('pages.latest')),

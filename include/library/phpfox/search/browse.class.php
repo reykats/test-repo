@@ -89,7 +89,24 @@ final class Phpfox_Search_Browse
 	public function execute()
 	{
 		$aActualConditions = (array) $this->search()->getConditions();		
-		
+		//added script by reykatz for pages search for content
+		if($this->_aParams['service']=="pages.browse") {
+			//check first param if has search
+			$first_array = $aActualConditions[0];
+			$extract = explode("AND ( (pages.title LIKE '%", $first_array);
+			if($extract > 1) {
+				$keyword = str_replace("AND ( (pages.title LIKE '%", "", $first_array);
+				$keyword = str_replace("%') )", "", $keyword);
+				if($keyword) { 
+					$query = "AND (pages.title LIKE '%" . $keyword . "%' OR pages.page_id IN 
+									(
+										SELECT page_id FROM " . Phpfox::getT('pages_text')  . " WHERE text LIKE '%$keyword%'
+									)
+								)";
+					$aActualConditions[0] = $query;
+				}
+			}
+		}
 		list($sModule, $sService) = explode('.',$this->_aParams['service']);		
 		if (Phpfox::isModule('input') && (isset($_SESSION[Phpfox::getParam('core.session_prefix')]['search'][$sModule][Phpfox::getLib('request')->get('search-id')]['input'])))
 		{
