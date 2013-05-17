@@ -84,6 +84,7 @@ h1.home_page_header {
 #main_footer_holder { 
 	padding: 0 20px 1px;
     position: relative;
+	display:none;
 }
 #site_search {
 	margin: 0 auto;
