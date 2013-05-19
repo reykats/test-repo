@@ -41,11 +41,11 @@ class Recipe_Component_Controller_Add extends Phpfox_Component
 			'cook_time' => array(
 				'def' => 'int',
 				'title' => 'Cook Time should be numeric.'
-			),
-			'ready_in' => array(
+			)
+			/* 'ready_in' => array(
 				'def' => 'int',
 				'title' => 'Ready In should be numeric.'
-			)
+			) */
 		);
 		$oValid = Phpfox::getLib('validator')->set(array(
 				'sFormName' => 'js_form',	
