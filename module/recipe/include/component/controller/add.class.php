@@ -161,7 +161,20 @@ class Recipe_Component_Controller_Add extends Phpfox_Component
 				'search' => 'keyword',
 			)
 		);
-				
+		
+		$addJS = '
+			<script type="text/javascript">
+				jQuery(function() {
+					jQuery("#prep_time, #cook_time").keyup(function() {
+						var prep_time = parseInt(jQuery("#prep_time").val());
+						var cook_time = parseInt(jQuery("#cook_time").val());
+						var ready_in = parseInt(prep_time + cook_time);
+						jQuery("#ready_in").val(ready_in);
+					});
+				});
+			</script>
+		';
+		
 		$this->template()->setPhrase(array(
 					'recipe.are_you_sure'
 				)
@@ -187,6 +200,7 @@ class Recipe_Component_Controller_Add extends Phpfox_Component
 					'sCategories' => Phpfox::getService('recipe.category')->getAddCatetories(),
 					'sSuffix' => '_120',
 					'sParentLink' => 'recipe',
+					'addJS' => $addJS
 				)
 			);
 	}

@@ -2,7 +2,7 @@
 <?php $aContent = array (
   'block_id' => '200',
   'type_id' => '0',
-  'ordering' => '3',
+  'ordering' => '4',
   'm_connection' => 'recipe.index',
   'component' => 'newrecipes',
   'location' => '1',

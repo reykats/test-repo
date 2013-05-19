@@ -1,5 +1,5 @@
 <?php defined('PHPFOX') or exit('NO DICE!'); ?>
-<?php /* Cached: April 27, 2013, 5:16 am */ ?>
+<?php /* Cached: May 8, 2013, 9:14 am */ ?>
 <?php echo $this->_aVars['sCreateJs']; ?>
 <div class="main_break"></div>
 <form method="post" action="<?php echo $this->_aVars['sFormAction']; ?>" id="js_form" name="js_form" onsubmit="<?php echo $this->_aVars['sGetJsForm']; ?>" enctype="multipart/form-data">
@@ -23,6 +23,54 @@
 	</div>
 	<div class="table">
 			<div class="table_left">
+<?php if (Phpfox::getParam('core.display_required')): ?><span class="required"><?php echo Phpfox::getParam('core.required_symbol'); ?></span><?php endif;  echo Phpfox::getPhrase('recipe.description'); ?>:
+			</div>
+			<div class="table_right">
+				<?php Phpfox::getBlock('attachment.share');  echo Phpfox::getLib('phpfox.editor')->get('description', array (
+  'id' => 'description',
+  'type' => 'basic',
+  'rows' => '10',
+  'cols' => '25',
+)); ?>
+			</div>
+	</div>
+	<div class="table">
+			<div class="table_left">
+<?php echo Phpfox::getPhrase('recipe.short_description'); ?>:
+			</div>
+			<div class="table_right">
+				<?php Phpfox::getBlock('attachment.share');  echo Phpfox::getLib('phpfox.editor')->get('short_description', array (
+  'id' => 'short_description',
+  'type' => 'basic',
+  'rows' => '7',
+  'cols' => '10',
+)); ?>
+			</div>
+	</div>
+	<div class="table">
+			<div class="table_left">
+<?php echo Phpfox::getPhrase('recipe.keywords'); ?>:
+			</div>
+			<div class="table_right">
+<?php if (isset ( $this->_aVars['aRecipe']['keywords'] ) && $this->_aVars['aRecipe']['user_id'] == Phpfox ::getUserId()): ?>
+				<input type="text" name="val[keywords]" value="<?php echo $this->_aVars['aRecipe']['keywords']; ?>" id="keywords" maxlength="150" size="40" />
+<?php else: ?>
+				<input type="text" name="val[keywords]" value="" id="keywords" maxlength="150" size="40" />
+<?php endif; ?>
+			</div>
+	</div>
+	<div class="table">
+		<table class="ntable">
+			<tr>
+				<td><label>Servings:</label> <input type="text" name="val[servings]" value="<?php echo $this->_aVars['aRecipe']['servings']; ?>" id="servings" maxlength="10" size="10" /></td>
+				<td><label>Prep Time (Minutes):</label> <input type="text" name="val[prep_time]" value="<?php echo $this->_aVars['aRecipe']['prep_time']; ?>" id="prep_time" maxlength="10" size="15" /></td>
+				<td><label>Cook Time (Minutes):</label> <input type="text" name="val[cook_time]" value="<?php echo $this->_aVars['aRecipe']['cook_time']; ?>" id="cook_time" maxlength="10" size="15" /></td>
+				<td><label>Ready In (Minutes):</label> <input type="text" name="val[ready_in]" value="<?php echo $this->_aVars['aRecipe']['ready_in']; ?>" id="ready_in" maxlength="10" size="15" /></td>
+			</tr>
+		</table>
+	</div>
+	<div class="table">
+			<div class="table_left">
 <?php if (Phpfox::getParam('core.display_required')): ?><span class="required"><?php echo Phpfox::getParam('core.required_symbol'); ?></span><?php endif; ?><label for="category"><?php echo Phpfox::getPhrase('recipe.category'); ?>:</label>
 			</div>
 			<div class="table_right">
@@ -39,42 +87,6 @@
 			'; ?>
 
 <?php endif; ?>
-	</div>
-	<div class="table">
-			<div class="table_left">
-<?php if (Phpfox::getParam('core.display_required')): ?><span class="required"><?php echo Phpfox::getParam('core.required_symbol'); ?></span><?php endif;  echo Phpfox::getPhrase('recipe.description'); ?>:
-			</div>
-			<div class="table_right">
-				<?php Phpfox::getBlock('attachment.share');  echo Phpfox::getLib('phpfox.editor')->get('description', array (
-  'id' => 'description',
-  'type' => 'basic',
-  'rows' => '10',
-)); ?>
-			</div>
-	</div>
-	<div class="table">
-			<div class="table_left">
-<?php echo Phpfox::getPhrase('recipe.short_description'); ?>:
-			</div>
-			<div class="table_right">
-				<?php Phpfox::getBlock('attachment.share');  echo Phpfox::getLib('phpfox.editor')->get('short_description', array (
-  'id' => 'short_description',
-  'type' => 'basic',
-  'rows' => '5',
-)); ?>
-			</div>
-	</div>
-	<div class="table">
-			<div class="table_left">
-<?php echo Phpfox::getPhrase('recipe.keywords'); ?>:
-			</div>
-			<div class="table_right">
-<?php if (isset ( $this->_aVars['aRecipe']['keywords'] ) && $this->_aVars['aRecipe']['user_id'] == Phpfox ::getUserId()): ?>
-				<input type="text" name="val[keywords]" value="<?php echo $this->_aVars['aRecipe']['keywords']; ?>" id="keywords" maxlength="150" size="40" />
-<?php else: ?>
-				<input type="text" name="val[keywords]" value="" id="keywords" maxlength="150" size="40" />
-<?php endif; ?>
-			</div>
 	</div>
 <?php if (Phpfox ::getParam('recipe.recipe_can_upload_picture')): ?>
 		<div class="table">

@@ -1,17 +1,5 @@
 <?php defined('PHPFOX') or exit('NO DICE!'); ?>
-<?php /* Cached: April 27, 2013, 5:17 am */ ?>
-<?php 
-/**
- * [PHPFOX_HEADER]
- * 
- * @copyright		phpfoxguru.com
- * @author  		Nicolas
- * @package  		Module_Recipe
- * @version 		$Id: index.html.php 2009-09-10 Nicolas $
- */
- 
- 
-?>
+<?php /* Cached: May 8, 2013, 8:43 am */ ?>
 <?php if (! count ( $this->_aVars['aRecipes'] )): ?>
 <?php if (defined ( 'PHPFOX_IS_USER_PROFILE' )): ?>
 <?php if ($this->_aVars['aUser']['user_id'] == Phpfox ::getUserId()): ?>
@@ -31,8 +19,7 @@
 		<ul class="action">
 			<li><a href="<?php echo Phpfox::getLib('phpfox.url')->makeUrl(''.$this->_aVars['sParentLink'].'.add'); ?>"><?php echo Phpfox::getPhrase('recipe.be_the_first_to_add'); ?></a></li>
 		</ul>
-<?php endif; ?>
-<?php else: ?>
+<?php endif;  else: ?>
 	<div id="js_recipe_outer_body">
 <?php if (count((array)$this->_aVars['aRecipes'])):  $this->_aPhpfoxVars['iteration']['arecipes'] = 0;  foreach ((array) $this->_aVars['aRecipes'] as $this->_aVars['aRecipe']):  $this->_aPhpfoxVars['iteration']['arecipes']++; ?>
 
@@ -41,13 +28,13 @@
 <?php echo Phpfox::getPhrase('recipe.featured'); ?>
 		</span>	
 		<div style="width:130px; position:absolute; text-align:center; left:10px;">
-			<a href="/network/recipe/view/<?php echo $this->_aVars['aRecipe']['title_url']; ?>" class="js_recipe_title_<?php echo $this->_aVars['aRecipe']['recipe_id']; ?>"><?php echo Phpfox::getLib('phpfox.image.helper')->display(array('path' => 'recipe.url_image','file' => $this->_aVars['aRecipe']['image_path'],'suffix' => $this->_aVars['sSuffix'],'max_width' => 'recipe.recipe_max_image_pic_size','max_height' => 'recipe.recipe_max_image_pic_size','class' => 'js_mp_fix_width','title' => $this->_aVars['aRecipe']['title'])); ?></a>
+			<a href="/recipe/view/<?php echo $this->_aVars['aRecipe']['title_url']; ?>" class="js_recipe_title_<?php echo $this->_aVars['aRecipe']['recipe_id']; ?>"><?php echo Phpfox::getLib('phpfox.image.helper')->display(array('path' => 'recipe.url_image','file' => $this->_aVars['aRecipe']['image_path'],'suffix' => $this->_aVars['sSuffix'],'max_width' => 'recipe.recipe_max_image_pic_size','max_height' => 'recipe.recipe_max_image_pic_size','class' => 'js_mp_fix_width','title' => $this->_aVars['aRecipe']['title'])); ?></a>
 			
 <?php Phpfox::getBlock('rate.display', array('aRatingCallback' => $this->_aVars['aRecipe']['aRatingCallback'])); ?>
 			
 		</div>
 		<div style="margin-left:145px; height:160px;">
-			<a href="/network/recipe/view/<?php echo $this->_aVars['aRecipe']['title_url']; ?>" style="font-size:11pt;"><?php echo Phpfox::getLib('phpfox.parse.output')->clean($this->_aVars['aRecipe']['title']); ?></a>
+			<a href="/recipe/view/<?php echo $this->_aVars['aRecipe']['title_url']; ?>" style="font-size:11pt;"><?php echo Phpfox::getLib('phpfox.parse.output')->clean($this->_aVars['aRecipe']['title']); ?></a>
 			
 			<div style="color:#808080;padding-top:5px; padding-bottom:5px;">
 <?php echo Phpfox::getPhrase('recipe.by'); ?> <?php echo '<span class="user_profile_link_span" id="js_user_name_link_' . $this->_aVars['aRecipe']['user_name'] . '"><a href="' . Phpfox::getLib('phpfox.url')->makeUrl('profile', array($this->_aVars['aRecipe']['user_name'], ((empty($this->_aVars['aRecipe']['user_name']) && isset($this->_aVars['aRecipe']['profile_page_id'])) ? $this->_aVars['aRecipe']['profile_page_id'] : null))) . '">' . Phpfox::getLib('phpfox.parse.output')->shorten($this->_aVars['aRecipe']['full_name'], Phpfox::getParam('user.maximum_length_for_full_name')) . '</a></span>'; ?> <?php echo Phpfox::getPhrase('recipe.on'); ?> <?php echo Phpfox::getTime(Phpfox::getParam('core.global_update_time'), $this->_aVars['aRecipe']['time_stamp']); ?>

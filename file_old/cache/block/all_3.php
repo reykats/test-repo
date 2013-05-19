@@ -336,29 +336,6 @@
       'profile.pic' => NULL,
     ),
   ),
-  'recipe.view' => 
-  array (
-    1 => 
-    array (
-      'recipe.image' => NULL,
-    ),
-  ),
-  'recipe.index' => 
-  array (
-    1 => 
-    array (
-      'recipe.category' => NULL,
-      'recipeblocks.newrecipes' => NULL,
-      'recipeblocks.featuredrecipes' => NULL,
-      'recipeblocks.randomrecipes' => NULL,
-      'recipeblocks.highestratedrecipes' => NULL,
-      'recipeblocks.leastratedrecipes' => NULL,
-      'recipeblocks.mostviewedrecipes' => NULL,
-      'recipeblocks.leastviewedrecipes' => NULL,
-      'recipeblocks.mostcommentedrecipes' => NULL,
-      'recipeblocks.leastcommentedrecipes' => NULL,
-    ),
-  ),
   'friend.profile' => 
   array (
     1 => 
@@ -389,6 +366,33 @@
     1 => 
     array (
       'pages.category' => NULL,
+    ),
+  ),
+  'recipe.view' => 
+  array (
+    3 => 
+    array (
+      267 => NULL,
+      'recipeblocks.newrecipes' => NULL,
+      'recipeblocks.highestratedrecipes' => NULL,
+      'recipeblocks.randomrecipes' => NULL,
+      'recipeblocks.tagclouds' => NULL,
+    ),
+  ),
+  'recipe.index' => 
+  array (
+    1 => 
+    array (
+      'recipe.category' => NULL,
+      'recipeblocks.newrecipes' => NULL,
+      'recipeblocks.featuredrecipes' => NULL,
+      'recipeblocks.randomrecipes' => NULL,
+      'recipeblocks.highestratedrecipes' => NULL,
+      'recipeblocks.leastratedrecipes' => NULL,
+      'recipeblocks.mostviewedrecipes' => NULL,
+      'recipeblocks.leastviewedrecipes' => NULL,
+      'recipeblocks.mostcommentedrecipes' => NULL,
+      'recipeblocks.leastcommentedrecipes' => NULL,
     ),
   ),
   'blog.index' => 

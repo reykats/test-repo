@@ -1,5 +1,5 @@
 <?php defined('PHPFOX') or exit('NO DICE!'); ?>
-<?php /* Cached: May 6, 2013, 7:53 am */ ?>
+<?php /* Cached: May 19, 2013, 9:43 am */ ?>
 <?php echo $this->_aVars['sCreateJs']; ?>
 <div class="main_break"></div>
 <form method="post" action="<?php echo $this->_aVars['sFormAction']; ?>" id="js_form" name="js_form" onsubmit="<?php echo $this->_aVars['sGetJsForm']; ?>" enctype="multipart/form-data">
@@ -65,7 +65,7 @@
 				<td><label>Servings:</label> <input type="text" name="val[servings]" value="<?php echo $this->_aVars['aRecipe']['servings']; ?>" id="servings" maxlength="10" size="10" /></td>
 				<td><label>Prep Time (Minutes):</label> <input type="text" name="val[prep_time]" value="<?php echo $this->_aVars['aRecipe']['prep_time']; ?>" id="prep_time" maxlength="10" size="15" /></td>
 				<td><label>Cook Time (Minutes):</label> <input type="text" name="val[cook_time]" value="<?php echo $this->_aVars['aRecipe']['cook_time']; ?>" id="cook_time" maxlength="10" size="15" /></td>
-				<td><label>Ready In (Minutes):</label> <input type="text" name="val[ready_in]" value="<?php echo $this->_aVars['aRecipe']['ready_in']; ?>" id="ready_in" maxlength="10" size="15" /></td>
+				<td><label>Ready In (Minutes):</label> <input type="text" name="val[ready_in]" value="<?php echo $this->_aVars['aRecipe']['ready_in']; ?>" id="ready_in" maxlength="10" size="15" disabled="true"/></td>
 			</tr>
 		</table>
 	</div>
@@ -117,4 +117,8 @@
 		</div>
 
 </form>
+
+<?php echo ''; ?>
+
+<?php echo $this->_aVars['addJS'];  echo ''; ?>
 

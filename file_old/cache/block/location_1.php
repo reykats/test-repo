@@ -181,23 +181,6 @@
     'track.recent-views' => '1',
     'profile.pic' => '1',
   ),
-  'recipe.view' => 
-  array (
-    'recipe.image' => '1',
-  ),
-  'recipe.index' => 
-  array (
-    'recipe.category' => '1',
-    'recipeblocks.newrecipes' => '1',
-    'recipeblocks.featuredrecipes' => '1',
-    'recipeblocks.randomrecipes' => '1',
-    'recipeblocks.highestratedrecipes' => '1',
-    'recipeblocks.leastratedrecipes' => '1',
-    'recipeblocks.mostviewedrecipes' => '1',
-    'recipeblocks.leastviewedrecipes' => '1',
-    'recipeblocks.mostcommentedrecipes' => '1',
-    'recipeblocks.leastcommentedrecipes' => '1',
-  ),
   'friend.profile' => 
   array (
     'profile.pic' => '1',
@@ -214,6 +197,27 @@
   'pages.index' => 
   array (
     'pages.category' => '1',
+  ),
+  'recipe.view' => 
+  array (
+    267 => '3',
+    'recipeblocks.newrecipes' => '3',
+    'recipeblocks.highestratedrecipes' => '3',
+    'recipeblocks.randomrecipes' => '3',
+    'recipeblocks.tagclouds' => '3',
+  ),
+  'recipe.index' => 
+  array (
+    'recipe.category' => '1',
+    'recipeblocks.newrecipes' => '1',
+    'recipeblocks.featuredrecipes' => '1',
+    'recipeblocks.randomrecipes' => '1',
+    'recipeblocks.highestratedrecipes' => '1',
+    'recipeblocks.leastratedrecipes' => '1',
+    'recipeblocks.mostviewedrecipes' => '1',
+    'recipeblocks.leastviewedrecipes' => '1',
+    'recipeblocks.mostcommentedrecipes' => '1',
+    'recipeblocks.leastcommentedrecipes' => '1',
   ),
   'blog.index' => 
   array (

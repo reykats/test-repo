@@ -1,5 +1,5 @@
 <?php defined('PHPFOX') or exit('NO DICE!'); ?>
-<?php /* Cached: May 6, 2013, 7:53 am */ ?>
+<?php /* Cached: May 19, 2013, 9:43 am */ ?>
 <?php if (isset ( $this->_aVars['aPageSectionMenu'] ) && count ( $this->_aVars['aPageSectionMenu'] )): ?>
 <div class="page_section_menu<?php if (! isset ( $this->_aVars['aPageExtraLink']['no_header_border'] )): ?> page_section_menu_header<?php endif; ?>">
 <?php if ($this->_aVars['aPageExtraLink'] !== null): ?>

@@ -1,5 +1,5 @@
 <?php defined('PHPFOX') or exit('NO DICE!'); ?>
-<?php /* Cached: May 6, 2013, 7:53 am */ ?>
+<?php /* Cached: May 19, 2013, 9:43 am */ ?>
 <?php if (! empty ( $this->_aVars['aSearchTool'] ) && is_array ( $this->_aVars['aSearchTool'] )): ?>
 	<div class="header_bar_menu">
 				

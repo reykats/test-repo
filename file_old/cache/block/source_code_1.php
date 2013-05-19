@@ -7,4 +7,11 @@
       261 => true,
     ),
   ),
+  'recipe.view' => 
+  array (
+    3 => 
+    array (
+      267 => true,
+    ),
+  ),
 ); ?>

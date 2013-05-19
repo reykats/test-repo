@@ -1,5 +1,5 @@
 <?php defined('PHPFOX') or exit('NO DICE!'); ?>
-<?php /* Cached: May 6, 2013, 7:53 am */ ?>
+<?php /* Cached: May 19, 2013, 9:43 am */ ?>
 <?php if (! PHPFOX_IS_AJAX_PAGE): ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -72,7 +72,6 @@
 									jQuery(function() {
 										jQuery("#search_form input@[type=\'text\']").keyup(function() {
 											  var data  = jQuery(this).val();
-											  console.log(data);
 											  if(jQuery(this).hasClass(\'txt_input\')) {
 												jQuery(\'input.js_temp_friend_search_input\').val(data);
 											  } else {
@@ -153,6 +152,24 @@
 <?php if (! $this->_aVars['bUseFullSite'] && ( count ( $this->_aVars['aBlocks3'] ) || count ( $this->_aVars['aAdBlocks3'] ) )): ?>
 												<div id="right">								
 <?php if ($this->bIsSample):  if (defined('PHPFOX_NO_WINDOW_CLICK')):  if (defined('PHPFOX_IS_AD_SAMPLE')): Phpfox::getBlock('ad.sample', array('block_id' => 3)); endif;  else: ?><div class="sample"<?php echo (!defined('PHPFOX_NO_WINDOW_CLICK') ? " onclick=\"window.parent.$('#location').val('3'); window.parent.tb_remove();\"" : ' style="cursor:default;"'); ?>><?php echo Phpfox::getPhrase('core.block') ; ?> 3<?php if (defined('PHPFOX_IS_AD_SAMPLE')): echo Phpfox::getService('ad')->getSizeForBlock("3"); endif;  if (defined('PHPFOX_IS_AD_SAMPLE')): Phpfox::getBlock('ad.sample', array('block_id' => 3)); endif; ?></div><?php endif;  else:  $aBlocks = Phpfox::getLib('phpfox.module')->getModuleBlocks('3');  $aUrl = Phpfox::getLib('url')->getParams();  $bDesigning = Phpfox::getService("theme")->isInDnDMode();  if (!Phpfox::isAdminPanel() && (PHPFOX_DESIGN_DND || $bDesigning || (defined("PHPFOX_IN_DESIGN_MODE") && PHPFOX_IN_DESIGN_MODE && in_array('3', array(1, 2, 3))))):?> <div class="js_can_move_blocks js_sortable_empty" id="js_can_move_blocks_3"> <div class="block js_sortable dnd_block_info">Position '3'</div></div><?php endif;  foreach ((array)$aBlocks as $sBlock):  if (!Phpfox::isAdminPanel() && (PHPFOX_DESIGN_DND || $bDesigning || (defined("PHPFOX_IN_DESIGN_MODE") && PHPFOX_IN_DESIGN_MODE && in_array('3', array(1, 2, 3))))):?><div class="js_can_move_blocks" id="js_can_move_blocks_3"><?php endif;  if (is_array($sBlock) && (!defined('PHPFOX_CAN_MOVE_BLOCKS') || !in_array('3', array(1, 2, 3, 4)))):  eval(' ?>' . $sBlock[0] . '<?php ');  else:  Phpfox::getBlock($sBlock);  endif;  if (!Phpfox::isAdminPanel() && (PHPFOX_DESIGN_DND || $bDesigning || (defined("PHPFOX_IN_DESIGN_MODE") && PHPFOX_IN_DESIGN_MODE && in_array('3', array(1, 2, 3))))):?></div><?php endif;  endforeach;  if (!Phpfox::isAdminPanel()):  Phpfox::getBlock('ad.display', array('block_id' => 3));  endif;  endif; ?>
+													<?php echo '
+														<script type="text/javascript">
+															jQuery(function() {
+																if(jQuery(\'#right .recipe-tabs\')) {
+																	jQuery(\'.recipe-tab li\').click(function() {
+																		if(!jQuery(this).hasClass(\'selected\')) {
+																			jQuery(\'.recipe-tab li.selected\').removeClass(\'selected\');
+																			jQuery(this).addClass(\'selected\');
+																			var index = jQuery(\'.recipe-tab li\').index(this);
+																			jQuery(\'#right .block\').removeClass(\'show\').addClass(\'hide\');
+																			jQuery(\'#right .block:eq(\' + index + \')\').removeClass(\'hide\').addClass(\'show\');
+																		}
+																	});
+																}
+															});
+														</script>
+													'; ?>
+
 												</div>
 <?php endif; ?>
 

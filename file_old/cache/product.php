@@ -21,7 +21,7 @@
     'description' => '',
     'version' => '1',
     'latest_version' => NULL,
-    'last_check' => '1364616995',
+    'last_check' => '1367221522',
     'is_active' => '1',
     'url' => '',
     'url_version_check' => '',

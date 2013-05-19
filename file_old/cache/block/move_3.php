@@ -51,6 +51,10 @@
   array (
     'apps.categories' => true,
   ),
+  'pages.index' => 
+  array (
+    'pages.category' => true,
+  ),
   'recipe.index' => 
   array (
     'recipe.category' => true,
@@ -64,10 +68,6 @@
     'recipeblocks.mostcommentedrecipes' => true,
     'recipeblocks.leastcommentedrecipes' => true,
   ),
-  'pages.index' => 
-  array (
-    'pages.category' => true,
-  ),
   'core.index-member' => 
   array (
     'recipeblocks.newrecipes' => true,
@@ -78,5 +78,12 @@
   'core.index-visitor' => 
   array (
     'newhome.guestview' => true,
+  ),
+  'recipe.view' => 
+  array (
+    'recipeblocks.newrecipes' => true,
+    'recipeblocks.highestratedrecipes' => true,
+    'recipeblocks.randomrecipes' => true,
+    'recipeblocks.tagclouds' => true,
   ),
 ); ?>
