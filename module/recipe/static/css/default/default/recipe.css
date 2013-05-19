@@ -71,7 +71,7 @@ div#top_recipe_search input#search_button
 	height: 60px;
     position: relative;
 }
-#layer_description iframe { width:928px !important; height:280px !important; }
+#layer_description iframe { width:970px !important; height:280px !important; }
 #layer_short_description #short_description { width:600px !important; }
 #js_recipe_outer_body .long_description {
 	margin:0 0 15px;
