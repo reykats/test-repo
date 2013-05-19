@@ -30,10 +30,10 @@ class Recipe_Component_Controller_Add extends Phpfox_Component
 				'def' => 'required',
 				'title' => Phpfox::getPhrase('recipe.provide_a_description')
 			),
-			'servings' => array(
+			/* 'servings' => array(
 				'def' => 'int',
 				'title' => 'Servings should be numeric.'
-			),
+			), */
 			'prep_time' => array(
 				'def' => 'int',
 				'title' => 'Prep Time should be numeric.'
