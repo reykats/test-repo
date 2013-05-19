@@ -42,10 +42,10 @@ class Recipe_Component_Controller_Add extends Phpfox_Component
 				'def' => 'int',
 				'title' => 'Cook Time should be numeric.'
 			)
-			/* 'ready_in' => array(
+		/* 	 'ready_in' => array(
 				'def' => 'int',
 				'title' => 'Ready In should be numeric.'
-			) */
+			)  */
 		);
 		$oValid = Phpfox::getLib('validator')->set(array(
 				'sFormName' => 'js_form',	
@@ -82,6 +82,9 @@ class Recipe_Component_Controller_Add extends Phpfox_Component
 					));
 				}
 			}
+			
+			
+			
 			$this->template()->assign(array('aRecipe' => $aRecipe));
 			$this->template()->setTitle(Phpfox::getPhrase('recipe.edit_a_recipe'))
 				->setBreadcrumb(Phpfox::getPhrase('recipe.recipe_title'), $this->url()->makeUrl('recipe'))
@@ -97,6 +100,8 @@ class Recipe_Component_Controller_Add extends Phpfox_Component
 				->setBreadcrumb(Phpfox::getPhrase('recipe.recipe_title'), $this->url()->makeUrl('recipe'))
 				->setBreadcrumb(Phpfox::getPhrase('recipe.add_a_recipe'), null, true);	
 		}
+		
+		
 		
 		if (($aVals = $this->request()->getArray('val')) && empty($iRecipeId))
 		{

@@ -88,7 +88,7 @@ class Recipe_Service_Process extends Phpfox_Service
 				'servings' => Phpfox::getLib('parse.input')->prepare($aVals['servings']),
 				'prep_time' => Phpfox::getLib('parse.input')->prepare($aVals['prep_time']),
 				'cook_time' => Phpfox::getLib('parse.input')->prepare($aVals['cook_time']),
-				'ready_in' => Phpfox::getLib('parse.input')->prepare($aVals['ready_in'])
+				'ready_in' => (int) Phpfox::getLib('parse.input')->prepare($aVals['prep_time']) + Phpfox::getLib('parse.input')->prepare($aVals['cook_time'])
 			)
 		);
 		//insert tags here
@@ -232,7 +232,7 @@ class Recipe_Service_Process extends Phpfox_Service
 						'servings' => Phpfox::getLib('parse.input')->prepare($aVals['servings']),
 						'prep_time' => Phpfox::getLib('parse.input')->prepare($aVals['prep_time']),
 						'cook_time' => Phpfox::getLib('parse.input')->prepare($aVals['cook_time']),
-						'ready_in' => Phpfox::getLib('parse.input')->prepare($aVals['ready_in'])
+						'ready_in' => (int) Phpfox::getLib('parse.input')->prepare($aVals['prep_time']) + Phpfox::getLib('parse.input')->prepare($aVals['cook_time'])
 					), 'recipe_id = ' . (int) $iRecipeId);
 			
 			$this->database()->delete(Phpfox::getT('recipe_category_data'), 'recipe_id = ' . (int) $iRecipeId);
