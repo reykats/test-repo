@@ -24,6 +24,9 @@ class Recipe_Component_Controller_View extends Phpfox_Component
 			return Phpfox_Error::display(Phpfox::getPhrase('recipe.the_recipe_does_not_exist'));
 		}
 		
+		//get all hotLinks and replace all keywords
+		$aRecipe['description_parsed'] = Phpfox::getLib('hotlinks')->replaceKeywordsToLinks($aRecipe['description_parsed']);
+		
 		if ($aRecipe['view_id']==1)
 		{
 			return Phpfox_Error::display(Phpfox::getPhrase('recipe.is_pending_an_admins_approval'));
@@ -47,9 +50,7 @@ class Recipe_Component_Controller_View extends Phpfox_Component
 			)
 		); 
 		
-		
 		$this->setParam('aRecipe', $aRecipe);
-		
 	
 		$this->setParam('aRatingCallback', array(
 				'type' => 'recipe',
@@ -72,6 +73,7 @@ class Recipe_Component_Controller_View extends Phpfox_Component
 		{
 			$aDisplays[$iPageCnt] = Phpfox::getPhrase('core.per_page', array('total' => $iPageCnt));
 		}
+		
 		$aFilters = array(
 			'display' => array(
 				'type' => 'select',
@@ -125,6 +127,7 @@ class Recipe_Component_Controller_View extends Phpfox_Component
 				'total_like' => 0,
 			)
 		);				
+		
 		
 		$this->template()->setTitle($aRecipe['title'])
 			->setTitle(Phpfox::getPhrase('recipe.recipes'))
