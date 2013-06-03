@@ -34,7 +34,7 @@ class Phpfox_Hotlinks
 		
 		foreach($hotLinks as $key => $value) {
 			$patterns[] = '/'.$value['keyword'].'/';
-			$replacements[] = $value['url'];
+			$replacements[] = "<a href='" . $value['url'] . "' target='_blank'> " .  $value['keyword']  . "</a>";
 		}
 		
 		return preg_replace($patterns, $replacements, $text);
