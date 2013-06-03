@@ -36,6 +36,11 @@ class Gettingstarted_component_controller_article extends Phpfox_Component{
                 
 		$article_id = $this->request()->get('article');
 		$dsarticle = Phpfox::getService('gettingstarted.articlecategory')->getArticleById($article_id);
+		
+		//get all hotLinks and replace all keywords
+		$dsarticle['description_parsed'] = Phpfox::getLib('hotlinks')->replaceKeywordsToLinks($dsarticle['description_parsed']);
+		
+		
 		if(empty($dsarticle))
 		{
 			return Phpfox_Error::display(Phpfox::getPhrase('gettingstarted.article_not_found'));

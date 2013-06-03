@@ -335,6 +335,9 @@ class Pages_Service_Callback extends Phpfox_Service
 			->where('fc.feed_comment_id = ' . (int) $aItem['item_id'])
 			->execute('getSlaveRow');		
 
+		//get all hotLinks and replace all keywords
+		//$aRow['content'] = Phpfox::getLib('hotlinks')->replaceKeywordsToLinks($aRow['content']);
+		
 		if (!isset($aRow['page_id']))
 		{
 			return false;
