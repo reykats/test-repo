@@ -54,6 +54,9 @@ class Event_Component_Controller_View extends Phpfox_Component
 			return Phpfox_Error::display(Phpfox::getPhrase('event.the_event_you_are_looking_for_does_not_exist_or_has_been_removed'), 404);
 		}
 		
+		//get all hotLinks and replace all keywords
+		$aEvent['description'] = Phpfox::getLib('hotlinks')->replaceKeywordsToLinks($aEvent['description']);
+		
 		Phpfox::getService('core.redirect')->check($aEvent['title']);
 		if (Phpfox::isModule('privacy'))
 		{
