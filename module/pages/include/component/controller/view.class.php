@@ -30,6 +30,11 @@ class Pages_Component_Controller_View extends Phpfox_Component
 		{
 			return Phpfox_Error::display(Phpfox::getPhrase('pages.the_page_you_are_looking_for_cannot_be_found'));
 		}
+		
+		//get all hotLinks and replace all keywords
+		$aPage['text'] = Phpfox::getLib('hotlinks')->replaceKeywordsToLinks($aPage['text']);
+		
+		
 		if (($this->request()->get('req3')) != '')
 		{
 			$this->template()->assign(array(

@@ -336,7 +336,7 @@ class Pages_Service_Callback extends Phpfox_Service
 			->execute('getSlaveRow');		
 
 		//get all hotLinks and replace all keywords
-		$aRow['content'] = Phpfox::getLib('hotlinks')->replaceKeywordsToLinks($aRow['content']);
+		//$aRow['content'] = Phpfox::getLib('hotlinks')->replaceKeywordsToLinks($aRow['content']);
 		
 		if (!isset($aRow['page_id']))
 		{
