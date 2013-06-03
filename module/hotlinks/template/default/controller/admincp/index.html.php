@@ -24,7 +24,7 @@ defined('PHPFOX') or exit('NO DICE!');
 	<tr class="checkRow{if is_int($iKey/2)} tr{else}{/if}">
 		<td>{$aItem.keyword}</td>
 		<td>{$aItem.url}</td>
-		<td><a href="/admincp/hotlinks/add/{$aItem.id}">Edit</a> | <a href="/admincp/hotlinks/delete/{$aItem.id}">Delete</a></td>
+		<td><a href="/admincp/hotlinks/add/{$aItem.id}">Edit</a></td>
 	</tr>
 	{/foreach}
 </table>
