@@ -69,6 +69,12 @@ class Hotlinks_Service_Hotlinks extends Phpfox_Service
 		return $id;
 	}
 	
+	public function delete($id) {
+		echo 1;
+		$this->database()->delete($this->_sTable, 'id = ' . (int) $id);
+		return true;
+	}
+	
 	/**
 	 * If a call is made to an unknown method attempt to connect
 	 * it to a specific plug-in with the same name thus allowing
