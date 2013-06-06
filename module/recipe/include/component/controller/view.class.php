@@ -40,7 +40,14 @@ class Recipe_Component_Controller_View extends Phpfox_Component
 		Phpfox::getLib('database')->query("UPDATE " . Phpfox::getT('recipe') . " SET total_view = total_view + 1 WHERE recipe_id = " . (int) $aRecipe['recipe_id'] . "");
 		$aRecipe['total_view'] = $aRecipe['total_view'] + 1;
 		
-		$Image = Phpfox::getLib('image.helper')->display(array(
+		$photo = $this->database()->select('u.full_name, u.user_image')
+			->from(Phpfox::getT('recipe'), 'r')
+			->join(Phpfox::getT('user'), 'u', 'u.user_id = r.user_id')
+			->where('r.recipe_id = ' . (int) $sRecipe['recipe_id'])
+			->execute('getSlaveRow');
+			
+		
+		/*$Image = Phpfox::getLib('image.helper')->display(array(
 			'title' => Phpfox::getUserBy('full_name'),
 			'path' => 'core.url_user',
 			'file' => Phpfox::getUserBy('user_image'),
@@ -48,7 +55,17 @@ class Recipe_Component_Controller_View extends Phpfox_Component
 			'max_width' => 120,
 			'max_height' => 120
 			)
-		); 
+		);*/
+
+		$Image = Phpfox::getLib('image.helper')->display(array(
+			'title' => $photo['full_name'],
+			'path' => 'core.url_user',
+			'file' => $photo['user_image'],
+			'suffix' => '_120',
+			'max_width' => 120,
+			'max_height' => 120
+			)
+		);
 		
 		$this->setParam('aRecipe', $aRecipe);
 	
