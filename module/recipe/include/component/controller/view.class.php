@@ -40,10 +40,10 @@ class Recipe_Component_Controller_View extends Phpfox_Component
 		Phpfox::getLib('database')->query("UPDATE " . Phpfox::getT('recipe') . " SET total_view = total_view + 1 WHERE recipe_id = " . (int) $aRecipe['recipe_id'] . "");
 		$aRecipe['total_view'] = $aRecipe['total_view'] + 1;
 		
-		$photo = $this->database()->select('u.full_name, u.user_image')
+		$photo = Phpfox::getLib('database')->select('u.full_name, u.user_image')
 			->from(Phpfox::getT('recipe'), 'r')
 			->join(Phpfox::getT('user'), 'u', 'u.user_id = r.user_id')
-			->where('r.recipe_id = ' . (int) $sRecipe['recipe_id'])
+			->where('r.recipe_id = ' . (int) $aRecipe['recipe_id'])
 			->execute('getSlaveRow');
 			
 		
